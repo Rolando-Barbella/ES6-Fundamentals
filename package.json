@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "js": "gulp js"
+    "js": "gulp js",
+    "build-watch": "webpack -d --watch"
   },
-  "author": "Shane Osbourne",
+  "author": "Rolando Barbella",
   "license": "ISC",
   "devDependencies": {
     "browserify": "^11.1.0",
@@ -21,6 +22,7 @@
     "gulp-plumber": "^1.0.1",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.1.0",
-    "node-neat": "^1.7.2"
+    "node-neat": "^1.7.2",
+    "webpack": "^1.12.9"
   }
 }
