@@ -34,6 +34,14 @@ function _interopRequireWildcard(obj) {
   }
 }
 
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });
+  } else {
+    obj[key] = value;
+  }return obj;
+}
+
 /// Working with modules
 
 var _lodash = require('lodash');
@@ -69,14 +77,34 @@ console.log("2+3", (0, _addition.sum)(2, 3));
 console.log("2+3+5", (0, _addition.sumMore)(2, 3, 5));
 console.log("second way of doing it", addition.sum(2, 3));
 
+//Object Enhancements
+var color = "red";
+var speed = 100;
+var drive = "fast";
+
+var car = _defineProperty({
+  color: color,
+  speed: speed,
+  go: function go() {
+    console.log("vroom");
+  }
+}, drive, function () {
+  console.log("slow");
+});
+
+console.log('the color car is ' + car.color);
+console.log('he runs at ' + car.speed);
+car.go();
+car.fast();
+
 },{"./addition":1,"./users":4,"lodash":5}],3:[function(require,module,exports){
 'use strict';
 
-var greet = require('./greeting');
+var greet = require('./es6');
 
 greet('Rolando');
 
-},{"./greeting":2}],4:[function(require,module,exports){
+},{"./es6":2}],4:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
