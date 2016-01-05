@@ -63,3 +63,18 @@ function addThreeThings(a,b,c){
 }
 
 addThreeThings(...first);
+
+//Shorthand Properties in ES6
+
+let name = 'Rolando';
+let surname = 'Barbella';
+let pet = "Dog";
+
+let person = {name, surname};
+
+let team = {person,pet}
+
+console.log(person);
+console.log(team);
+
+

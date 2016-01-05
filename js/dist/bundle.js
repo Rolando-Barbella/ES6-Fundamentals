@@ -50,7 +50,7 @@ car.fast();*/
 
 ///Using the ES6 spread operator
 
-"use strict";
+'use strict';
 
 console.log.apply(console, [1, 2, 3]);
 
@@ -66,6 +66,19 @@ function addThreeThings(a, b, c) {
 }
 
 addThreeThings.apply(undefined, first);
+
+//Shorthand Properties in ES6
+
+var name = 'Rolando';
+var surname = 'Barbella';
+var pet = "Dog";
+
+var person = { name: name, surname: surname };
+
+var team = { person: person, pet: pet };
+
+console.log(person);
+console.log(team);
 
 },{}],2:[function(require,module,exports){
 'use strict';
