@@ -1,4 +1,4 @@
-module.exports = function(name,greeting = 'Hello'){
+/*module.exports = function(name,greeting = 'Hello'){
   console.log(`${greeting} ${name}`);
 }
 
@@ -45,4 +45,21 @@ var car = {
 console.log('the color car is '+ car.color);
 console.log('he runs at ' + car.speed);
 car.go();
-car.fast();
+car.fast();*/
+
+///Using the ES6 spread operator 
+
+console.log(...[1,2,3]);
+
+var first = [1,2,3];
+var second = [4,5,6];
+
+first.push(...second);
+console.log(first);
+
+function addThreeThings(a,b,c){
+  let result = a + b +c;
+  console.log(result);
+}
+
+addThreeThings(...first);
