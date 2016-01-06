@@ -45,7 +45,7 @@ var car = {
 console.log('the color car is '+ car.color);
 console.log('he runs at ' + car.speed);
 car.go();
-car.fast();*/
+car.fast();
 
 ///Using the ES6 spread operator 
 
@@ -75,6 +75,73 @@ let person = {name, surname};
 let team = {person,pet}
 
 console.log(person);
-console.log(team);
+console.log(team);*/
+
+///ES6 (ES2015) - Generators
+
+function* hey(){
+  console.log(`You called 'hey()'`);
+  yield "hello";
+  console.log(`I am not called until the second next`);
+  yield "are";
+  console.log(`Called when done`);
+  yield "you?";
+}
+
+let heyYou = hey();
+console.log(heyYou.next().value);
+console.log(heyYou.next().value);
+console.log(heyYou.next().value);
+
+for (let word of heyYou){
+  console.log(word);
+}
+
+//---------
+function* hello(){
+    console.log(`You called 'next()'`);
+    yield "hello";
+}
+
+let greeter = hello();
+console.log(greeter);
+let next = greeter.next();
+console.log(next);
+let done = greeter.next();
+console.log(done);
+//------------
+function* hello(){
+    let friendly = yield "How";
+    friendly = yield friendly + "are";
+    yield friendly + "you?";
+}
+
+var hello = hello();
+console.log(hello.next("first").value);
+console.log(hello.next(" the heck ").value);
+console.log(hello.next(" silly ol'").value);
+
+//-----------
+function* graph(){
+    let x = 0;
+    let y = 0;
+    while(true){
+        yield {x:x, y:y}
+        x += 2;
+        y += 1;
+    }
+}
+
+
+var graphGenerator = graph();
+console.log(graphGenerator.next().value);
+console.log(graphGenerator.next().value);
+console.log(graphGenerator.next().value);
+console.log(graphGenerator.next().value);
+console.log(graphGenerator.next().value);
+console.log(graphGenerator.next().value);
+console.log(graphGenerator.next().value);
+console.log(graphGenerator.next().value);
+
 
 

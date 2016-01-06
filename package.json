@@ -17,6 +17,7 @@
     "vinyl-source-stream": "^1.1.0"
   },
   "dependencies": {
+    "babel-polyfill": "^6.3.14",
     "exorcist": "^0.4.0",
     "gulp-minify-css": "^1.2.1",
     "gulp-plumber": "^1.0.1",
