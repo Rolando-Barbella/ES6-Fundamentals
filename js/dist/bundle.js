@@ -76,115 +76,45 @@ let person = {name, surname};
 let team = {person,pet}
 
 console.log(person);
-console.log(team);*/
+console.log(team);
 
 ///ES6 (ES2015) - Generators
 
-"use strict";
-
-var marked0$0 = [hey, hello, hello, graph].map(regeneratorRuntime.mark);
-function hey() {
-  return regeneratorRuntime.wrap(function hey$(context$1$0) {
-    while (1) switch (context$1$0.prev = context$1$0.next) {
-      case 0:
-        console.log("You called 'hey()'");
-        context$1$0.next = 3;
-        return "hello";
-
-      case 3:
-        console.log("I am not called until the second next");
-        context$1$0.next = 6;
-        return "are";
-
-      case 6:
-        console.log("Called when done");
-        context$1$0.next = 9;
-        return "you?";
-
-      case 9:
-      case "end":
-        return context$1$0.stop();
-    }
-  }, marked0$0[0], this);
+function* hey(){
+  console.log(`You called 'hey()'`);
+  yield "hello";
+  console.log(`I am not called until the second next`);
+  yield "are";
+  console.log(`Called when done`);
+  yield "you?";
 }
 
-var heyYou = hey();
+let heyYou = hey();
 console.log(heyYou.next().value);
 console.log(heyYou.next().value);
 console.log(heyYou.next().value);
 
-var _iteratorNormalCompletion = true;
-var _didIteratorError = false;
-var _iteratorError = undefined;
-
-try {
-  for (var _iterator = heyYou[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-    var word = _step.value;
-
-    console.log(word);
-  }
-
-  //---------
-} catch (err) {
-  _didIteratorError = true;
-  _iteratorError = err;
-} finally {
-  try {
-    if (!_iteratorNormalCompletion && _iterator["return"]) {
-      _iterator["return"]();
-    }
-  } finally {
-    if (_didIteratorError) {
-      throw _iteratorError;
-    }
-  }
+for (let word of heyYou){
+  console.log(word);
 }
 
-function hello() {
-  return regeneratorRuntime.wrap(function hello$(context$1$0) {
-    while (1) switch (context$1$0.prev = context$1$0.next) {
-      case 0:
-        console.log("You called 'next()'");
-        context$1$0.next = 3;
-        return "hello";
-
-      case 3:
-      case "end":
-        return context$1$0.stop();
-    }
-  }, marked0$0[1], this);
+//---------
+function* hello(){
+    console.log(`You called 'next()'`);
+    yield "hello";
 }
 
-var greeter = hello();
+let greeter = hello();
 console.log(greeter);
-var next = greeter.next();
+let next = greeter.next();
 console.log(next);
-var done = greeter.next();
+let done = greeter.next();
 console.log(done);
 //------------
-function hello() {
-  var friendly;
-  return regeneratorRuntime.wrap(function hello$(context$1$0) {
-    while (1) switch (context$1$0.prev = context$1$0.next) {
-      case 0:
-        context$1$0.next = 2;
-        return "How";
-
-      case 2:
-        friendly = context$1$0.sent;
-        context$1$0.next = 5;
-        return friendly + "are";
-
-      case 5:
-        friendly = context$1$0.sent;
-        context$1$0.next = 8;
-        return friendly + "you?";
-
-      case 8:
-      case "end":
-        return context$1$0.stop();
-    }
-  }, marked0$0[2], this);
+function* hello(){
+    let friendly = yield "How";
+    friendly = yield friendly + "are";
+    yield friendly + "you?";
 }
 
 var hello = hello();
@@ -192,46 +122,121 @@ console.log(hello.next("first").value);
 console.log(hello.next(" the heck ").value);
 console.log(hello.next(" silly ol'").value);
 
-//-----------
-function graph() {
-  var x, y;
-  return regeneratorRuntime.wrap(function graph$(context$1$0) {
-    while (1) switch (context$1$0.prev = context$1$0.next) {
-      case 0:
-        x = 0;
-        y = 0;
 
-      case 2:
-        if (!true) {
-          context$1$0.next = 9;
-          break;
-        }
+//String Templates
+let sayHi = "Hi!";
+let salutation = `${sayHi}, World`;
+let salutationSpace = `
+YOU
+  ${sayHi}, 
 
-        context$1$0.next = 5;
-        return { x: x, y: y };
+World`
 
-      case 5:
-        x += 2;
-        y += 1;
-        context$1$0.next = 2;
-        break;
+;
 
-      case 9:
-      case "end":
-        return context$1$0.stop();
-    }
-  }, marked0$0[3], this);
+console.log(salutation);
+console.log(salutationSpace);
+
+let x = 1;
+let y = 2;
+let maths = `${x} + ${y} = ${x+y}`
+
+console.log(maths);
+
+function tag(strings, ...values){
+  if(values[0]<20){
+    values[1] = "awake";
+    return `${strings[0]}${values[0]}${strings[1]}${values[1]}`
+  }
+  else{
+    values[1] = "sleep";
+  }
 }
 
-var graphGenerator = graph();
-console.log(graphGenerator.next().value);
-console.log(graphGenerator.next().value);
-console.log(graphGenerator.next().value);
-console.log(graphGenerator.next().value);
-console.log(graphGenerator.next().value);
-console.log(graphGenerator.next().value);
-console.log(graphGenerator.next().value);
-console.log(graphGenerator.next().value);
+var message = tag`It's ${new Date().getHours()} I'm ${" "} `;
+
+console.log(message);*/
+
+//Destructuring Assignment
+
+"use strict";
+
+var _firstName$lastName$phone$email$address = {
+  "firstName": "Clinton",
+  "lastName": "Ruiz",
+  "phone": "1-403-985-0449",
+  "email": "pharetra@facilisislorem.org",
+  "address": "Ap #829-3443 Nec St."
+};
+var firstName = _firstName$lastName$phone$email$address.firstName;
+var lastName = _firstName$lastName$phone$email$address.lastName;
+
+console.log(firstName, lastName);
+
+function listObj() {
+  return {
+    color: "blue",
+    name: "Rolando",
+    city: "Caracas",
+    job: "coder"
+  };
+}
+
+var _listObj = listObj();
+
+var name = _listObj.name;
+var city = _listObj.city;
+
+console.log(name);
+console.log(city);
+
+var _ref = ["one", "two", "tree", "four", "five"];
+var first = _ref[0];
+var fifth = _ref[4];
+
+console.log(first);
+console.log(fifth);
+
+var contacts = [{
+  "firstName": "Clinton",
+  "lastName": "Ruiz",
+  "phone": "1-403-985-0449",
+  "email": "pharetra@facilisislorem.org",
+  "address": "Ap #829-3443 Nec St."
+}, {
+  "firstName": "Skyler",
+  "lastName": "Carroll",
+  "phone": "1-429-754-5027",
+  "email": "Cras.vehicula.alique@diamProin.ca",
+  "address": "P.O. Box 171, 1135 Feugiat St."
+}, {
+  "firstName": "Kylynn",
+  "lastName": "Madden",
+  "phone": "1-637-627-2810",
+  "email": "mollis.Duis@ante.co.uk",
+  "address": "993-6353 Aliquet, Street"
+}, {
+  "firstName": "Chaney",
+  "lastName": "Edwards",
+  "phone": "1-397-181-4501",
+  "email": "rutrum@Nullamlobortis.net",
+  "address": "P.O. Box 342, 9574 Egestas Street"
+}];
+
+contacts.forEach(function (_ref2) {
+  var firstName = _ref2.firstName;
+  return console.log(firstName);
+});
+
+var Skyler = contacts[1];
+
+function logEmail(_ref3) {
+  var email = _ref3.email;
+
+  console.log(email);
+}
+
+logEmail(Skyler);
 
 },{}],2:[function(require,module,exports){
 "use strict";

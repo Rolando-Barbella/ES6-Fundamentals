@@ -75,7 +75,7 @@ let person = {name, surname};
 let team = {person,pet}
 
 console.log(person);
-console.log(team);*/
+console.log(team);
 
 ///ES6 (ES2015) - Generators
 
@@ -121,27 +121,106 @@ console.log(hello.next("first").value);
 console.log(hello.next(" the heck ").value);
 console.log(hello.next(" silly ol'").value);
 
-//-----------
-function* graph(){
-    let x = 0;
-    let y = 0;
-    while(true){
-        yield {x:x, y:y}
-        x += 2;
-        y += 1;
-    }
+
+//String Templates
+let sayHi = "Hi!";
+let salutation = `${sayHi}, World`;
+let salutationSpace = `
+YOU
+  ${sayHi}, 
+
+World`
+
+;
+
+console.log(salutation);
+console.log(salutationSpace);
+
+let x = 1;
+let y = 2;
+let maths = `${x} + ${y} = ${x+y}`
+
+console.log(maths);
+
+function tag(strings, ...values){
+  if(values[0]<20){
+    values[1] = "awake";
+    return `${strings[0]}${values[0]}${strings[1]}${values[1]}`
+  }
+  else{
+    values[1] = "sleep";
+  }
 }
 
+var message = tag`It's ${new Date().getHours()} I'm ${" "} `;
 
-var graphGenerator = graph();
-console.log(graphGenerator.next().value);
-console.log(graphGenerator.next().value);
-console.log(graphGenerator.next().value);
-console.log(graphGenerator.next().value);
-console.log(graphGenerator.next().value);
-console.log(graphGenerator.next().value);
-console.log(graphGenerator.next().value);
-console.log(graphGenerator.next().value);
+console.log(message);*/
 
+//Destructuring Assignment
 
+let {firstName, lastName} = {
+  "firstName": "Clinton",
+  "lastName": "Ruiz",
+  "phone": "1-403-985-0449",
+  "email": "pharetra@facilisislorem.org",
+  "address": "Ap #829-3443 Nec St."
+}
 
+console.log(firstName,lastName);
+
+function listObj(){
+  return {
+    color:"blue",
+    name:"Rolando",
+    city:"Caracas",
+    job:"coder"
+  }
+}
+var {name,city} = listObj();
+console.log(name);
+console.log(city);
+
+var [first,,,,fifth] = ["one","two","tree","four","five"];
+console.log(first);
+console.log(fifth);
+
+var contacts = [
+  {
+    "firstName": "Clinton",
+    "lastName": "Ruiz",
+    "phone": "1-403-985-0449",
+    "email": "pharetra@facilisislorem.org",
+    "address": "Ap #829-3443 Nec St."
+  },
+  {
+    "firstName": "Skyler",
+    "lastName": "Carroll",
+    "phone": "1-429-754-5027",
+    "email": "Cras.vehicula.alique@diamProin.ca",
+    "address": "P.O. Box 171, 1135 Feugiat St."
+  },
+  {
+    "firstName": "Kylynn",
+    "lastName": "Madden",
+    "phone": "1-637-627-2810",
+    "email": "mollis.Duis@ante.co.uk",
+    "address": "993-6353 Aliquet, Street"
+  },
+  {
+    "firstName": "Chaney",
+    "lastName": "Edwards",
+    "phone": "1-397-181-4501",
+    "email": "rutrum@Nullamlobortis.net",
+    "address": "P.O. Box 342, 9574 Egestas Street"
+  }
+]
+
+contacts.forEach(({firstName})=>console.log(firstName));
+
+var [,Skyler] = contacts;
+
+function logEmail({email}){
+  console.log(email);
+}
+
+logEmail(Skyler);
