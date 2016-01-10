@@ -224,7 +224,7 @@ function logEmail({email}){
 }
 
 logEmail(Skyler); 
-*/
+
 
 //Default Values for Function Parameters
 function anotherHello(hi,name = "Rolando"){
@@ -247,3 +247,21 @@ function receive2(weird = ()=> console.log("Weird")){
 
 receive2();
 
+*/
+// Arrow Function =>
+
+var arrowHello = (message,name) => `${message} ${name}`;
+console.log(arrowHello("hello","mamma"));
+
+var superMan = {
+  name:"Clark",
+  showMessage:function(message,lastName){
+    lastName(message);
+  },
+  receive:function(){
+    this.showMessage(" Kent", message => 
+    console.log(this.name + message));
+  }
+}
+
+superMan.receive();

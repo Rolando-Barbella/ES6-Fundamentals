@@ -225,36 +225,54 @@ function logEmail({email}){
 }
 
 logEmail(Skyler); 
-*/
+
 
 //Default Values for Function Parameters
-"use strict";
-
-function anotherHello(hi) {
-  var name = arguments.length <= 1 || arguments[1] === undefined ? "Rolando" : arguments[1];
-
+function anotherHello(hi,name = "Rolando"){
   console.log(hi + " , " + name);
 }
 
-anotherHello("Hello", "Billy");
+anotherHello("Hello","Billy");
 
-function receive(weird) {
+function receive(weird){
   weird();
 }
 
-receive(function () {
+receive(function(){
   console.log("weird");
 });
 
-function receive2() {
-  var weird = arguments.length <= 0 || arguments[0] === undefined ? function () {
-    return console.log("Weird");
-  } : arguments[0];
-
+function receive2(weird = ()=> console.log("Weird")){
   weird();
 }
 
 receive2();
+
+*/
+// Arrow Function =>
+
+"use strict";
+
+var arrowHello = function arrowHello(message, name) {
+  return message + " " + name;
+};
+console.log(arrowHello("hello", "mamma"));
+
+var superMan = {
+  name: "Clark",
+  showMessage: function showMessage(message, lastName) {
+    lastName(message);
+  },
+  receive: function receive() {
+    var _this = this;
+
+    this.showMessage(" Kent", function (message) {
+      return console.log(_this.name + message);
+    });
+  }
+};
+
+superMan.receive();
 
 },{}],2:[function(require,module,exports){
 "use strict";
