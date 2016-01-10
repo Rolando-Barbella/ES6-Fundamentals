@@ -154,7 +154,7 @@ function tag(strings, ...values){
 
 var message = tag`It's ${new Date().getHours()} I'm ${" "} `;
 
-console.log(message);*/
+console.log(message);
 
 //Destructuring Assignment
 
@@ -223,4 +223,27 @@ function logEmail({email}){
   console.log(email);
 }
 
-logEmail(Skyler);
+logEmail(Skyler); 
+*/
+
+//Default Values for Function Parameters
+function anotherHello(hi,name = "Rolando"){
+  console.log(hi + " , " + name);
+}
+
+anotherHello("Hello","Billy");
+
+function receive(weird){
+  weird();
+}
+
+receive(function(){
+  console.log("weird");
+});
+
+function receive2(weird = ()=> console.log("Weird")){
+  weird();
+}
+
+receive2();
+

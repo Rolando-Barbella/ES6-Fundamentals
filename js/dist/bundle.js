@@ -155,88 +155,106 @@ function tag(strings, ...values){
 
 var message = tag`It's ${new Date().getHours()} I'm ${" "} `;
 
-console.log(message);*/
+console.log(message);
 
 //Destructuring Assignment
 
-"use strict";
-
-var _firstName$lastName$phone$email$address = {
+let {firstName, lastName} = {
   "firstName": "Clinton",
   "lastName": "Ruiz",
   "phone": "1-403-985-0449",
   "email": "pharetra@facilisislorem.org",
   "address": "Ap #829-3443 Nec St."
-};
-var firstName = _firstName$lastName$phone$email$address.firstName;
-var lastName = _firstName$lastName$phone$email$address.lastName;
-
-console.log(firstName, lastName);
-
-function listObj() {
-  return {
-    color: "blue",
-    name: "Rolando",
-    city: "Caracas",
-    job: "coder"
-  };
 }
 
-var _listObj = listObj();
+console.log(firstName,lastName);
 
-var name = _listObj.name;
-var city = _listObj.city;
-
+function listObj(){
+  return {
+    color:"blue",
+    name:"Rolando",
+    city:"Caracas",
+    job:"coder"
+  }
+}
+var {name,city} = listObj();
 console.log(name);
 console.log(city);
 
-var _ref = ["one", "two", "tree", "four", "five"];
-var first = _ref[0];
-var fifth = _ref[4];
-
+var [first,,,,fifth] = ["one","two","tree","four","five"];
 console.log(first);
 console.log(fifth);
 
-var contacts = [{
-  "firstName": "Clinton",
-  "lastName": "Ruiz",
-  "phone": "1-403-985-0449",
-  "email": "pharetra@facilisislorem.org",
-  "address": "Ap #829-3443 Nec St."
-}, {
-  "firstName": "Skyler",
-  "lastName": "Carroll",
-  "phone": "1-429-754-5027",
-  "email": "Cras.vehicula.alique@diamProin.ca",
-  "address": "P.O. Box 171, 1135 Feugiat St."
-}, {
-  "firstName": "Kylynn",
-  "lastName": "Madden",
-  "phone": "1-637-627-2810",
-  "email": "mollis.Duis@ante.co.uk",
-  "address": "993-6353 Aliquet, Street"
-}, {
-  "firstName": "Chaney",
-  "lastName": "Edwards",
-  "phone": "1-397-181-4501",
-  "email": "rutrum@Nullamlobortis.net",
-  "address": "P.O. Box 342, 9574 Egestas Street"
-}];
+var contacts = [
+  {
+    "firstName": "Clinton",
+    "lastName": "Ruiz",
+    "phone": "1-403-985-0449",
+    "email": "pharetra@facilisislorem.org",
+    "address": "Ap #829-3443 Nec St."
+  },
+  {
+    "firstName": "Skyler",
+    "lastName": "Carroll",
+    "phone": "1-429-754-5027",
+    "email": "Cras.vehicula.alique@diamProin.ca",
+    "address": "P.O. Box 171, 1135 Feugiat St."
+  },
+  {
+    "firstName": "Kylynn",
+    "lastName": "Madden",
+    "phone": "1-637-627-2810",
+    "email": "mollis.Duis@ante.co.uk",
+    "address": "993-6353 Aliquet, Street"
+  },
+  {
+    "firstName": "Chaney",
+    "lastName": "Edwards",
+    "phone": "1-397-181-4501",
+    "email": "rutrum@Nullamlobortis.net",
+    "address": "P.O. Box 342, 9574 Egestas Street"
+  }
+]
 
-contacts.forEach(function (_ref2) {
-  var firstName = _ref2.firstName;
-  return console.log(firstName);
-});
+contacts.forEach(({firstName})=>console.log(firstName));
 
-var Skyler = contacts[1];
+var [,Skyler] = contacts;
 
-function logEmail(_ref3) {
-  var email = _ref3.email;
-
+function logEmail({email}){
   console.log(email);
 }
 
-logEmail(Skyler);
+logEmail(Skyler); 
+*/
+
+//Default Values for Function Parameters
+"use strict";
+
+function anotherHello(hi) {
+  var name = arguments.length <= 1 || arguments[1] === undefined ? "Rolando" : arguments[1];
+
+  console.log(hi + " , " + name);
+}
+
+anotherHello("Hello", "Billy");
+
+function receive(weird) {
+  weird();
+}
+
+receive(function () {
+  console.log("weird");
+});
+
+function receive2() {
+  var weird = arguments.length <= 0 || arguments[0] === undefined ? function () {
+    return console.log("Weird");
+  } : arguments[0];
+
+  weird();
+}
+
+receive2();
 
 },{}],2:[function(require,module,exports){
 "use strict";
