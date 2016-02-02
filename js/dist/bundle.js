@@ -274,6 +274,17 @@ var superMan = {
 
 superMan.receive();
 
+//Converting an array-like object into an Array with Array.from()
+
+var products = Array.from(document.querySelectorAll('.product'));
+console.log(products);
+
+products.filter(function (product) {
+  return parseFloat(product.innerHTML) < 10;
+}).forEach(function (product) {
+  return product.style.color = 'red';
+});
+
 },{}],2:[function(require,module,exports){
 "use strict";
 

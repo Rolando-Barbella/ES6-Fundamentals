@@ -265,3 +265,13 @@ var superMan = {
 }
 
 superMan.receive();
+
+//Converting an array-like object into an Array with Array.from()
+
+const products = 
+  Array.from(document.querySelectorAll('.product'));
+  console.log(products)
+
+products
+  .filter(product => parseFloat(product.innerHTML)<10)
+  .forEach(product => product.style.color = 'red');
