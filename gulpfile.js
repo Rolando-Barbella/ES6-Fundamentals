@@ -1,15 +1,10 @@
 var gulp = require('gulp');
 var gutil = require('gulp-util');
-var sass = require('gulp-sass');
-var minifycss = require('gulp-minify-css');
-var neat = require('node-neat');
 var source = require('vinyl-source-stream');
 var browserify = require('browserify');
 var watchify = require('watchify');
 var babelify = require('babelify');
 var exorcist = require('exorcist');
-var rename = require('gulp-rename');
-var plumber = require('gulp-plumber');
 var browserSync = require('browser-sync').create();
 var reload = browserSync.reload;
 
@@ -42,25 +37,6 @@ gulp.task('watch', function () {
   });
 });
 
-/* Sass task */
-gulp.task('sass', function () {  
-  gulp.src('sass/styles.scss')
-  .pipe(plumber())
-  .pipe(sass({
-    includePaths: ['scss'].concat(neat)
-  }))
-  .pipe(gulp.dest('css'))
-  .pipe(rename({suffix: '.min'}))
-  .pipe(minifycss())
-  .pipe(browserSync.stream())
-  .pipe(gulp.dest('css'))
-  
-  /* Reload the browser CSS after every change */
-  .pipe(reload({stream:true}));
-});
-
-
-gulp.task('default',['watch','sass'], function () {
-  gulp.watch([ 'sass/*.scss','sass/**/*.scss'], ['sass'])
+gulp.task('default',['watch'], function () {
   return bundle(browserify("js/main.js"));
 });
