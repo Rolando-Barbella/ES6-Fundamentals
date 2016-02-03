@@ -7,13 +7,14 @@ VALUE.foo = 'bar';
 console.log('value:',VALUE);
 
 const API = 'XXX'
+
 if(true){
   const yes = 'bar';
   console.log('foo',yes);
 }
 
 let answer = 42;
-console.log(`the answer is ${answer}`);
+console.log(`the answer is ${answer}`);*/
 
 /// Working with modules
 
@@ -26,7 +27,7 @@ console.log( "2+3", sum(2,3));
 console.log( "2+3+5", addTwo(2,3,5));
 console.log("second way of doing it", addition.sum(2,3));
 
-//Object Enhancements
+/*//Object Enhancements
 var color = "red";
 var speed = 100;
 var drive = "fast";
@@ -247,7 +248,7 @@ function receive2(weird = ()=> console.log("Weird")){
 
 receive2();
 
-*/
+
 // Arrow Function =>
 
 var arrowHello = (message,name) => `${message} ${name}`;
@@ -274,4 +275,4 @@ const products =
 
 products
   .filter(product => parseFloat(product.innerHTML)<10)
-  .forEach(product => product.style.color = 'red');
+  .forEach(product => product.style.color = 'red');*/
