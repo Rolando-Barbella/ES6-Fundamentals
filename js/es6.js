@@ -18,17 +18,17 @@ console.log(`the answer is ${answer}`);*/
 
 /// Working with modules
 
-import * as _ from 'lodash';
+/*import * as _ from 'lodash';
 import {sum,sumMore as addTwo} from './addition';
 import * as addition from './addition';
 import {users} from './users';
 console.log(_.where(users,{age:36}));
 console.log( "2+3", sum(2,3));
 console.log( "2+3+5", addTwo(2,3,5));
-console.log("second way of doing it", addition.sum(2,3));
+console.log("second way of doing it", addition.sum(2,3));*/
 
-/*//Object Enhancements
-var color = "red";
+//Object Enhancements
+/*var color = "red";
 var speed = 100;
 var drive = "fast";
 
@@ -43,14 +43,14 @@ var car = {
   }
 };
 
-console.log('the color car is '+ car.color);
-console.log('he runs at ' + car.speed);
+console.log('The color car is '+ car.color);
+console.log('He runs at ' + car.speed + ' ' + 'Miles an hour');
 car.go();
 car.fast();
-
+*/
 ///Using the ES6 spread operator 
 
-console.log(...[1,2,3]);
+/*console.log(...[1,2,3]);
 
 var first = [1,2,3];
 var second = [4,5,6];
@@ -63,11 +63,11 @@ function addThreeThings(a,b,c){
   console.log(result);
 }
 
-addThreeThings(...first);
+addThreeThings(...first);*/
 
 //Shorthand Properties in ES6
 
-let name = 'Rolando';
+/*let name = 'Rolando';
 let surname = 'Barbella';
 let pet = "Dog";
 
@@ -77,10 +77,10 @@ let team = {person,pet}
 
 console.log(person);
 console.log(team);
-
+*/
 ///ES6 (ES2015) - Generators
 
-function* hey(){
+/*function* hey(){
   console.log(`You called 'hey()'`);
   yield "hello";
   console.log(`I am not called until the second next`);
@@ -96,7 +96,7 @@ console.log(heyYou.next().value);
 
 for (let word of heyYou){
   console.log(word);
-}
+}*/
 
 //---------
 function* hello(){
@@ -123,7 +123,7 @@ console.log(hello.next(" the heck ").value);
 console.log(hello.next(" silly ol'").value);
 
 
-//String Templates
+/*//String Templates
 let sayHi = "Hi!";
 let salutation = `${sayHi}, World`;
 let salutationSpace = `
