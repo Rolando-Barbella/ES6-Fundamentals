@@ -142,7 +142,7 @@ let y = 2;
 let maths = `${x} + ${y} = ${x+y}`
 
 console.log(maths);*/
-
+/*
 function tag(strings, ...values){
   if(values[0]<20){
     values[1] = "awake";
@@ -156,11 +156,11 @@ function tag(strings, ...values){
 
 var message = tag`It's ${new Date().getHours()} I'm ${" "} `;
 
-console.log(message);
+console.log(message);*/
 
-/*//Destructuring Assignment
+//Destructuring Assignment
 
-let {firstName, lastName} = {
+/*let {firstName, lastName} = {
   "firstName": "Clinton",
   "lastName": "Ruiz",
   "phone": "1-403-985-0449",
@@ -168,25 +168,26 @@ let {firstName, lastName} = {
   "address": "Ap #829-3443 Nec St."
 }
 
-console.log(firstName,lastName);
+console.log(firstName,lastName);*/
 
-function listObj(){
+/*function listObj(){
   return {
-    color:"blue",
     name:"Rolando",
     city:"Caracas",
-    job:"coder"
+    job:"Surfer",
+    favoriteColor:"Blue"
   }
 }
 var {name,city} = listObj();
 console.log(name);
 console.log(city);
 
-var [first,,,,fifth] = ["one","two","tree","four","five"];
+var [first,second,,fifth] = ["one","two","tree","four","five"];
 console.log(first);
+console.log(second);
 console.log(fifth);
-
-var contacts = [
+*/
+/*var contacts = [
   {
     "firstName": "Clinton",
     "lastName": "Ruiz",
@@ -195,11 +196,11 @@ var contacts = [
     "address": "Ap #829-3443 Nec St."
   },
   {
-    "firstName": "Skyler",
-    "lastName": "Carroll",
+    "firstName": "Rolando",
+    "lastName": "Barbella",
     "phone": "1-429-754-5027",
-    "email": "Cras.vehicula.alique@diamProin.ca",
-    "address": "P.O. Box 171, 1135 Feugiat St."
+    "email": "rolando.alique@diamProin.ca",
+    "address": "Cf24 Cathays"
   },
   {
     "firstName": "Kylynn",
@@ -219,14 +220,14 @@ var contacts = [
 
 contacts.forEach(({firstName})=>console.log(firstName));
 
-var [,Skyler] = contacts;
+var [,Rolando] = contacts;
 
 function logEmail({email}){
   console.log(email);
 }
 
-logEmail(Skyler); 
-
+logEmail(Rolando); 
+*/
 
 //Default Values for Function Parameters
 function anotherHello(hi,name = "Rolando"){
@@ -250,7 +251,7 @@ function receive2(weird = ()=> console.log("Weird")){
 receive2();
 
 
-// Arrow Function =>
+/*// Arrow Function =>
 
 var arrowHello = (message,name) => `${message} ${name}`;
 console.log(arrowHello("hello","mamma"));

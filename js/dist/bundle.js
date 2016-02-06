@@ -143,31 +143,25 @@ let y = 2;
 let maths = `${x} + ${y} = ${x+y}`
 
 console.log(maths);*/
-
-"use strict";
-
-var _templateObject = _taggedTemplateLiteral(["It's ", " I'm ", " "], ["It's ", " I'm ", " "]);
-
-function _taggedTemplateLiteral(strings, raw) {
-  return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } }));
-}
-
-function tag(strings) {
-  if (arguments[1] < 20) {
-    arguments[2] = "awake";
-    return "" + strings[0] + arguments[1] + strings[1] + arguments[2];
-  } else {
-    arguments[2] = "sleep";
+/*
+function tag(strings, ...values){
+  if(values[0]<20){
+    values[1] = "awake";
+    return `${strings[0]}${values[0]}${strings[1]}${values[1]}`
+  }
+  else{
+    values[1] = "sleep";
   }
 }
 
-var message = tag(_templateObject, new Date().getHours(), " ");
 
-console.log(message);
+var message = tag`It's ${new Date().getHours()} I'm ${" "} `;
 
-/*//Destructuring Assignment
+console.log(message);*/
 
-let {firstName, lastName} = {
+//Destructuring Assignment
+
+/*let {firstName, lastName} = {
   "firstName": "Clinton",
   "lastName": "Ruiz",
   "phone": "1-403-985-0449",
@@ -175,25 +169,26 @@ let {firstName, lastName} = {
   "address": "Ap #829-3443 Nec St."
 }
 
-console.log(firstName,lastName);
+console.log(firstName,lastName);*/
 
-function listObj(){
+/*function listObj(){
   return {
-    color:"blue",
     name:"Rolando",
     city:"Caracas",
-    job:"coder"
+    job:"Surfer",
+    favoriteColor:"Blue"
   }
 }
 var {name,city} = listObj();
 console.log(name);
 console.log(city);
 
-var [first,,,,fifth] = ["one","two","tree","four","five"];
+var [first,second,,fifth] = ["one","two","tree","four","five"];
 console.log(first);
+console.log(second);
 console.log(fifth);
-
-var contacts = [
+*/
+/*var contacts = [
   {
     "firstName": "Clinton",
     "lastName": "Ruiz",
@@ -202,11 +197,11 @@ var contacts = [
     "address": "Ap #829-3443 Nec St."
   },
   {
-    "firstName": "Skyler",
-    "lastName": "Carroll",
+    "firstName": "Rolando",
+    "lastName": "Barbella",
     "phone": "1-429-754-5027",
-    "email": "Cras.vehicula.alique@diamProin.ca",
-    "address": "P.O. Box 171, 1135 Feugiat St."
+    "email": "rolando.alique@diamProin.ca",
+    "address": "Cf24 Cathays"
   },
   {
     "firstName": "Kylynn",
@@ -226,38 +221,45 @@ var contacts = [
 
 contacts.forEach(({firstName})=>console.log(firstName));
 
-var [,Skyler] = contacts;
+var [,Rolando] = contacts;
 
 function logEmail({email}){
   console.log(email);
 }
 
-logEmail(Skyler); 
-
+logEmail(Rolando); 
+*/
 
 //Default Values for Function Parameters
-function anotherHello(hi,name = "Rolando"){
+"use strict";
+
+function anotherHello(hi) {
+  var name = arguments.length <= 1 || arguments[1] === undefined ? "Rolando" : arguments[1];
+
   console.log(hi + " , " + name);
 }
 
-anotherHello("Hello","Billy");
+anotherHello("Hello", "Billy");
 
-function receive(weird){
+function receive(weird) {
   weird();
 }
 
-receive(function(){
+receive(function () {
   console.log("weird");
 });
 
-function receive2(weird = ()=> console.log("Weird")){
+function receive2() {
+  var weird = arguments.length <= 0 || arguments[0] === undefined ? function () {
+    return console.log("Weird");
+  } : arguments[0];
+
   weird();
 }
 
 receive2();
 
-
-// Arrow Function =>
+/*// Arrow Function =>
 
 var arrowHello = (message,name) => `${message} ${name}`;
 console.log(arrowHello("hello","mamma"));

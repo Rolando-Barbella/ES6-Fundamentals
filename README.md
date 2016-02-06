@@ -160,3 +160,54 @@ var message = tag`It's ${new Date().getHours()} I'm ${" "} `;
 
 console.log(message); ==> It's 19 I'm awake
 ```
+##Destructuring Assignment
+There is ways of declaring variables with arrays while passing arguments, lets see how.
+```javascript
+let {firstName, lastName} = {
+  "firstName": "Clinton",
+  "lastName": "Ruiz",
+  "phone": "1-403-985-0449",
+  "email": "pharetra@facilisislorem.org",
+  "address": "Ap #829-3443 Nec St."
+}
+console.log(firstName,lastName); ==> Clinton Ruiz
+
+```javascript
+var [first,,,,fifth] = ["one","two","tree","four","five"];
+console.log(first); ==> one
+console.log(fifth); ==> five
+```
+You can also do
+```javascript
+var [first,second,,fifth] = ["one","two","tree","four","five"];
+console.log(second); ==> two
+```
+More
+```javascript
+var contacts = [
+  {
+    "firstName": "Clinton",
+    "lastName": "Ruiz",
+    "phone": "1-403-985-0449",
+    "email": "pharetra@facilisislorem.org",
+    "address": "Ap #829-3443 Nec St."
+  },
+  {
+    "firstName": "Rolando",
+    "lastName": "Barbella",
+    "phone": "1-429-754-5027",
+    "email": "rolando.alique@diamProin.uk",
+    "address": "Cf24 Cathays"
+  },
+  .......
+]
+var [,Rolando] = contacts;
+
+function showEmail({email}){
+  console.log(email);
+}
+
+showEmail(,Rolando); ==> rolando.alique@diamProin.uk
+showEmail(Clinton); ==> pharetra@facilisislorem.org
+```
+##Default Values for Function Parameters
