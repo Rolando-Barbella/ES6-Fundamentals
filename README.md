@@ -113,8 +113,8 @@ let is an alternatives to var when declaring variables,let is block-scoped inste
   console.log(team); ==>{person: Object, pet: "Dog"}
 ```
 ###String Templates
-You can declare strings with ` (backticks), in addition to " and '. This make the language a bit more mature, when we do something like ```javascript 
-string + anotherString + ' '; ``` it feels like if we are doing basic math, lets look at some examples.
+You can declare strings with  (backticks), in addition to " and '. This make the language a bit more mature, when we just do something like ```javascript 
+string + anotherString + ' '; ``` this feels like if we are doing basic math, lets look at some examples.
 
 ```javascript
 let sayHi = "Hi!";
@@ -227,7 +227,7 @@ var arrowHello = (message,name) => `${message} ${name}`;
 console.log(arrowHello("hello","Mamma")); ==> Hello Mamma
 ```
 
-We can also go deeper into function and do something like
+We can also go deeper into functions and do something like:
 ```javascript
 var arrowHello = (message,name) => `${message} ${name}`;
 console.log(arrowHello("hello","Mamma")); ==> Hello Mamma
@@ -249,7 +249,7 @@ superMan.receive(); ==> Clark Kent
 ```
 ##Sources
 
-[es6-feature](http://es6-features.org/#Constants)
-[wikipedia](http://en.wikipedia.org/wiki/ECMAScript)
-[ponyfoo.com](http://ponyfoo.com/articles/es6#template-literals)
-[MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/New_in_JavaScript/ECMAScript_6_support_in_Mozilla)
+- [es6-feature](http://es6-features.org/#Constants)
+- [wikipedia](http://en.wikipedia.org/wiki/ECMAScript)
+- [ponyfoo.com](http://ponyfoo.com/articles/es6#template-literals)
+- [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/New_in_JavaScript/ECMAScript_6_support_in_Mozilla)
