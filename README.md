@@ -143,7 +143,7 @@ let maths = `${x} + ${y} = ${x+y}`
 
 console.log(maths) ==> 1 + 2 = 3;
 ```
-More complex scenario
+More complex scenario:
 ```javascript
 function tag(strings, ...values){
   if(values[0]<20){
@@ -165,22 +165,23 @@ let {firstName, lastName} = {
   "firstName": "Clinton",
   "lastName": "Ruiz",
   "phone": "1-403-985-0449",
-  "email": "pharetra@facilisislorem.org",
-  "address": "Ap #829-3443 Nec St."
+  "email": "clinton-ruiz@facilisislorem.org",
+  "address": "NW11 London"
 }
 console.log(firstName,lastName); ==> Clinton Ruiz
+```
 
 ```javascript
 var [first,,,,fifth] = ["one","two","tree","four","five"];
 console.log(first); ==> one
 console.log(fifth); ==> five
 ```
-You can also do
+You can also do:
 ```javascript
 var [first,second,,fifth] = ["one","two","tree","four","five"];
 console.log(second); ==> two
 ```
-More
+More:
 ```javascript
 var contacts = [
   {
@@ -253,3 +254,4 @@ superMan.receive(); ==> Clark Kent
 - [wikipedia](http://en.wikipedia.org/wiki/ECMAScript)
 - [ponyfoo.com](http://ponyfoo.com/articles/es6#template-literals)
 - [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/New_in_JavaScript/ECMAScript_6_support_in_Mozilla)
+- [egghead.io](https://egghead.io/technologies/es6)
