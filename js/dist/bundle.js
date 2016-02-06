@@ -231,61 +231,56 @@ logEmail(Rolando);
 */
 
 //Default Values for Function Parameters
-"use strict";
-
-function anotherHello(hi) {
-  var name = arguments.length <= 1 || arguments[1] === undefined ? "Rolando" : arguments[1];
-
+/*function anotherHello(hi,name = "Rolando"){
   console.log(hi + " , " + name);
 }
 anotherHello("Hello");
-anotherHello("Hello", "Billy");
+anotherHello("Hello","Billy");
 
-function receive(weird) {
+function receive(weird){
   weird();
 }
 
-receive(function () {
+receive(function(){
   console.log("weird");
 });
 
-function receive2() {
-  var weird = arguments.length <= 0 || arguments[0] === undefined ? function () {
-    return console.log("Weird");
-  } : arguments[0];
-
+function receive2(weird = ()=> console.log("Weird")){
   weird();
 }
 
-receive2();
+receive2();*/
 
-/*// Arrow Function =>
+// Arrow Function =>
 
-var arrowHello = (message,name) => `${message} ${name}`;
+/*var arrowHello = (message,name) => `${message} ${name}`;
 console.log(arrowHello("hello","mamma"));
 
 var superMan = {
   name:"Clark",
-  showMessage:function(message,lastName){
-    lastName(message);
+  showLastName:function(lastName,add){
+    add(lastName);
   },
   receive:function(){
-    this.showMessage(" Kent", message => 
-    console.log(this.name + message));
+    this.showLastName(" Kent", lastName => 
+    console.log(this.name + lastName));
   }
 }
 
-superMan.receive();
+superMan.receive();*/
 
 //Converting an array-like object into an Array with Array.from()
 
-const products = 
-  Array.from(document.querySelectorAll('.product'));
-  console.log(products)
+'use strict';
 
-products
-  .filter(product => parseFloat(product.innerHTML)<10)
-  .forEach(product => product.style.color = 'red');*/
+var products = Array.from(document.querySelectorAll('.product'));
+console.log(products);
+
+products.filter(function (product) {
+  return parseFloat(product.innerHTML) < 10;
+}).forEach(function (product) {
+  return product.style.color = 'red';
+});
 
 },{}],2:[function(require,module,exports){
 "use strict";

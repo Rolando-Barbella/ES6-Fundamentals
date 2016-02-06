@@ -253,21 +253,21 @@ receive2();*/
 
 // Arrow Function =>
 
-var arrowHello = (message,name) => `${message} ${name}`;
+/*var arrowHello = (message,name) => `${message} ${name}`;
 console.log(arrowHello("hello","mamma"));
 
 var superMan = {
   name:"Clark",
-  showMessage:function(message,lastName){
-    lastName(message);
+  showLastName:function(lastName,add){
+    add(lastName);
   },
   receive:function(){
-    this.showMessage(" Kent", message => 
-    console.log(this.name + message));
+    this.showLastName(" Kent", lastName => 
+    console.log(this.name + lastName));
   }
 }
 
-superMan.receive();
+superMan.receive();*/
 
 //Converting an array-like object into an Array with Array.from()
 
@@ -277,4 +277,4 @@ const products =
 
 products
   .filter(product => parseFloat(product.innerHTML)<10)
-  .forEach(product => product.style.color = 'red');*/
+  .forEach(product => product.style.color = 'red');

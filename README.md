@@ -221,3 +221,28 @@ anotherHello("Hello"); ==> Hello Rolando
 anotherHello("Hello","Billy"); ==> Hello Billy
 
 ```
+##Arrow Function =>
+We can use => as part of the new syntax and do stuff like
+
+```javascript
+var arrowHello = (message,name) => `${message} ${name}`;
+console.log(arrowHello("hello","Mamma")); ==> Hello Mamma
+```
+We can also go deeper into function and do something like
+```javascript
+var arrowHello = (message,name) => `${message} ${name}`;
+console.log(arrowHello("hello","Mamma")); ==> Hello Mamma
+```
+var superMan = {
+  name:"Clark",
+  showLastName:function(lastName,add){
+    add(lastName);
+  },
+  receive:function(){
+    this.showLastName(" Kent", lastName => 
+    console.log(this.name + lastName));
+  }
+}
+
+superMan.receive(); ==> Clark Kent
+```
