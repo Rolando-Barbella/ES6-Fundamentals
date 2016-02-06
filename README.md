@@ -11,7 +11,6 @@ Support for constants (also known as "immutable variables"), i.e., variables whi
 
 The variable is recommend for example to use on cases when defining an API that we know no is not going to change, is recommend to declare it with capital letter.
 
-###Examples
 ```javascript
 const API = '//myapi.json'
 
@@ -27,7 +26,7 @@ if(true){
 ##Working with modules
 With ES6 you can import modules from other pages, this quite handy and powerful, less reputation will be done with this, it gives the language a similar look and feel to Python and Ruby.
 
-###Examples
+
 addition.js
 ```javascript
 
@@ -63,7 +62,6 @@ console.log("second way of doing it", addition.sum(2,3));
 ###Object Enhancements
 This syntactic sugar allows us to quickly create objects by passing the reference and it will create the property based on that.
 
-###Examples
 ```javascript
 var color = "red";
 var speed = 100;
@@ -246,3 +244,9 @@ var superMan = {
 
 superMan.receive(); ==> Clark Kent
 ```
+##Sources
+
+[es6-feature](http://es6-features.org/#Constants)
+[wikipedia](http://en.wikipedia.org/wiki/ECMAScript)
+[ponyfoo.com](http://ponyfoo.com/articles/es6#template-literals)
+[MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/New_in_JavaScript/ECMAScript_6_support_in_Mozilla)
