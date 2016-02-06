@@ -99,7 +99,7 @@ You can get rid of an array in the most easy way you can ever imagine and off co
   first.push(...second);
   console.log(first);
 ```
-###Shorthand Properties
+##Shorthand Properties
 let is an alternatives to var when declaring variables,let is block-scoped instead of lexically scoped to a function,let is hoisted to the top of the block, while var declarations are hoisted to top of the function.
 
 ```javascript
@@ -113,4 +113,35 @@ let is an alternatives to var when declaring variables,let is block-scoped inste
 
   console.log(person); ==>{name: "Rolando", surname: "Barbella"}
   console.log(team); ==>{person: Object, pet: "Dog"}
+```
+###String Templates
+You can declare strings with ` (backticks), in addition to " and '. This make the language a bit more mature, when we do something like ```javascript 
+string + anotherString + ' '; ``` it feels like if we are doing basic math, lets look at some examples.
+
+```javascript
+let sayHi = "Hi!";
+let salutation = `${sayHi}, World`;
+console.log(salutation) ==>  Hi!, World
+```
+
+```javascript
+let salutationSpace = `
+YOU
+  ${sayHi}, 
+
+World`
+
+;
+console.log(salutationSpace) ==> YOU
+  Hi!, 
+
+World
+```
+You can do cool maths like:
+```javascript
+let x = 1;
+let y = 2;
+let maths = `${x} + ${y} = ${x+y}`
+
+console.log(maths) ==> 1 + 2 = 3;
 ```

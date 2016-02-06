@@ -99,7 +99,7 @@ for (let word of heyYou){
 }*/
 
 //---------
-function* hello(){
+/*function* hello(){
     console.log(`You called 'next()'`);
     yield "hello";
 }
@@ -121,10 +121,10 @@ var hello = hello();
 console.log(hello.next("first").value);
 console.log(hello.next(" the heck ").value);
 console.log(hello.next(" silly ol'").value);
+*/
 
-
-/*//String Templates
-let sayHi = "Hi!";
+//String Templates
+/*let sayHi = "Hi!";
 let salutation = `${sayHi}, World`;
 let salutationSpace = `
 YOU
@@ -136,7 +136,7 @@ World`
 
 console.log(salutation);
 console.log(salutationSpace);
-
+*/
 let x = 1;
 let y = 2;
 let maths = `${x} + ${y} = ${x+y}`
@@ -157,7 +157,7 @@ var message = tag`It's ${new Date().getHours()} I'm ${" "} `;
 
 console.log(message);
 
-//Destructuring Assignment
+/*//Destructuring Assignment
 
 let {firstName, lastName} = {
   "firstName": "Clinton",

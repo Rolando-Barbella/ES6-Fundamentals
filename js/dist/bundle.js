@@ -100,63 +100,32 @@ for (let word of heyYou){
 }*/
 
 //---------
-"use strict";
-
-var marked0$0 = [hello, hello].map(regeneratorRuntime.mark);
-function hello() {
-  return regeneratorRuntime.wrap(function hello$(context$1$0) {
-    while (1) switch (context$1$0.prev = context$1$0.next) {
-      case 0:
-        console.log("You called 'next()'");
-        context$1$0.next = 3;
-        return "hello";
-
-      case 3:
-      case "end":
-        return context$1$0.stop();
-    }
-  }, marked0$0[0], this);
+/*function* hello(){
+    console.log(`You called 'next()'`);
+    yield "hello";
 }
 
-var greeter = hello();
+let greeter = hello();
 console.log(greeter);
-var next = greeter.next();
+let next = greeter.next();
 console.log(next);
-var done = greeter.next();
+let done = greeter.next();
 console.log(done);
 //------------
-function hello() {
-  var friendly;
-  return regeneratorRuntime.wrap(function hello$(context$1$0) {
-    while (1) switch (context$1$0.prev = context$1$0.next) {
-      case 0:
-        context$1$0.next = 2;
-        return "How";
-
-      case 2:
-        friendly = context$1$0.sent;
-        context$1$0.next = 5;
-        return friendly + "are";
-
-      case 5:
-        friendly = context$1$0.sent;
-        context$1$0.next = 8;
-        return friendly + "you?";
-
-      case 8:
-      case "end":
-        return context$1$0.stop();
-    }
-  }, marked0$0[1], this);
+function* hello(){
+    let friendly = yield "How";
+    friendly = yield friendly + "are";
+    yield friendly + "you?";
 }
 
 var hello = hello();
 console.log(hello.next("first").value);
 console.log(hello.next(" the heck ").value);
 console.log(hello.next(" silly ol'").value);
+*/
 
-/*//String Templates
-let sayHi = "Hi!";
+//String Templates
+/*let sayHi = "Hi!";
 let salutation = `${sayHi}, World`;
 let salutationSpace = `
 YOU
@@ -168,28 +137,35 @@ World`
 
 console.log(salutation);
 console.log(salutationSpace);
+*/
+"use strict";
 
-let x = 1;
-let y = 2;
-let maths = `${x} + ${y} = ${x+y}`
+var _templateObject = _taggedTemplateLiteral(["It's ", " I'm ", " "], ["It's ", " I'm ", " "]);
+
+function _taggedTemplateLiteral(strings, raw) {
+  return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } }));
+}
+
+var x = 1;
+var y = 2;
+var maths = x + " + " + y + " = " + (x + y);
 
 console.log(maths);
 
-function tag(strings, ...values){
-  if(values[0]<20){
-    values[1] = "awake";
-    return `${strings[0]}${values[0]}${strings[1]}${values[1]}`
-  }
-  else{
-    values[1] = "sleep";
+function tag(strings) {
+  if (arguments[1] < 20) {
+    arguments[2] = "awake";
+    return "" + strings[0] + arguments[1] + strings[1] + arguments[2];
+  } else {
+    arguments[2] = "sleep";
   }
 }
 
-var message = tag`It's ${new Date().getHours()} I'm ${" "} `;
+var message = tag(_templateObject, new Date().getHours(), " ");
 
 console.log(message);
 
-//Destructuring Assignment
+/*//Destructuring Assignment
 
 let {firstName, lastName} = {
   "firstName": "Clinton",
