@@ -83,7 +83,7 @@ console.log('He runs at ' + car.speed + ' ' + 'Miles an hour');
 car.go();
 car.fasts() ==> slow;
 ```
-##ES6 spread operator
+##Spread operator
 You can get rid of an array in the most easy way you can ever imagine and off course do more complex things.
 
 ```javascript
@@ -158,7 +158,7 @@ var message = tag`It's ${new Date().getHours()} I'm ${" "} `;
 
 console.log(message); ==> It's 19 I'm awake
 ```
-##Destructuring Assignment
+##Destructuring and parameter handling
 There is ways of declaring variables with arrays while passing arguments, lets see how.
 ```javascript
 let {firstName, lastName} = {
@@ -226,11 +226,14 @@ We can use => as part of the new syntax and do stuff like
 var arrowHello = (message,name) => `${message} ${name}`;
 console.log(arrowHello("hello","Mamma")); ==> Hello Mamma
 ```
+
 We can also go deeper into function and do something like
 ```javascript
 var arrowHello = (message,name) => `${message} ${name}`;
 console.log(arrowHello("hello","Mamma")); ==> Hello Mamma
 ```
+
+```javascript
 var superMan = {
   name:"Clark",
   showLastName:function(lastName,add){

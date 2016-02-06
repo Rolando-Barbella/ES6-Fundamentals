@@ -1,3 +1,5 @@
 js
 node_modules
 .tmp
+package.json
+webpack.config.js
