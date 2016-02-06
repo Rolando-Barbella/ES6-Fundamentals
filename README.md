@@ -211,3 +211,13 @@ showEmail(,Rolando); ==> rolando.alique@diamProin.uk
 showEmail(Clinton); ==> pharetra@facilisislorem.org
 ```
 ##Default Values for Function Parameters
+We can have default parameters inside a function and also overwrite them, lets see. 
+
+```javascript
+function anotherHello(hi,name = "Rolando"){
+  console.log(hi + " , " + name);
+}
+anotherHello("Hello"); ==> Hello Rolando
+anotherHello("Hello","Billy"); ==> Hello Billy
+
+```

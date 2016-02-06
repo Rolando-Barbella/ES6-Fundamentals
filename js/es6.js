@@ -230,10 +230,10 @@ logEmail(Rolando);
 */
 
 //Default Values for Function Parameters
-function anotherHello(hi,name = "Rolando"){
+/*function anotherHello(hi,name = "Rolando"){
   console.log(hi + " , " + name);
 }
-
+anotherHello("Hello");
 anotherHello("Hello","Billy");
 
 function receive(weird){
@@ -248,10 +248,10 @@ function receive2(weird = ()=> console.log("Weird")){
   weird();
 }
 
-receive2();
+receive2();*/
 
 
-/*// Arrow Function =>
+// Arrow Function =>
 
 var arrowHello = (message,name) => `${message} ${name}`;
 console.log(arrowHello("hello","mamma"));

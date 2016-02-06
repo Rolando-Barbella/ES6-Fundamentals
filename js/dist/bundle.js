@@ -238,7 +238,7 @@ function anotherHello(hi) {
 
   console.log(hi + " , " + name);
 }
-
+anotherHello("Hello");
 anotherHello("Hello", "Billy");
 
 function receive(weird) {
