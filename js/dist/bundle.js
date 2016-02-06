@@ -138,6 +138,12 @@ World`
 console.log(salutation);
 console.log(salutationSpace);
 */
+/*let x = 1;
+let y = 2;
+let maths = `${x} + ${y} = ${x+y}`
+
+console.log(maths);*/
+
 "use strict";
 
 var _templateObject = _taggedTemplateLiteral(["It's ", " I'm ", " "], ["It's ", " I'm ", " "]);
@@ -145,12 +151,6 @@ var _templateObject = _taggedTemplateLiteral(["It's ", " I'm ", " "], ["It's ", 
 function _taggedTemplateLiteral(strings, raw) {
   return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } }));
 }
-
-var x = 1;
-var y = 2;
-var maths = x + " + " + y + " = " + (x + y);
-
-console.log(maths);
 
 function tag(strings) {
   if (arguments[1] < 20) {

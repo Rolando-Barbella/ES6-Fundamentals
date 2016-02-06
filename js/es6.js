@@ -137,11 +137,11 @@ World`
 console.log(salutation);
 console.log(salutationSpace);
 */
-let x = 1;
+/*let x = 1;
 let y = 2;
 let maths = `${x} + ${y} = ${x+y}`
 
-console.log(maths);
+console.log(maths);*/
 
 function tag(strings, ...values){
   if(values[0]<20){
@@ -152,6 +152,7 @@ function tag(strings, ...values){
     values[1] = "sleep";
   }
 }
+
 
 var message = tag`It's ${new Date().getHours()} I'm ${" "} `;
 
