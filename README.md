@@ -16,11 +16,11 @@ const API = '//myapi.json'
 
 const VALUE = {};
 VALUE.foo = 'bar';
-console.log('value:',VALUE); ==> value: Object {foo: "bar"}
+console.log('value:',VALUE); // value: Object {foo: "bar"}
 
 if(true){
   const consoleBar = 'Bar';
-  console.log('foo',consoleBar); ==> foo bar
+  console.log('foo',consoleBar); // foo bar
 }
 ```
 ##Working with modules
@@ -81,7 +81,7 @@ var car = {
 console.log('The color car is '+ car.color);
 console.log('He runs at ' + car.speed + ' ' + 'Miles an hour');
 car.go();
-car.fasts() ==> slow;
+car.fasts() // slow;
 ```
 ##Spread operator
 You can get rid of an array in the most easy way you can ever imagine and off course do more complex things.
@@ -109,8 +109,8 @@ let is an alternatives to var when declaring variables,let is block-scoped inste
 
   let team = {person,pet}
 
-  console.log(person); ==>{name: "Rolando", surname: "Barbella"}
-  console.log(team); ==>{person: Object, pet: "Dog"}
+  console.log(person); //{name: "Rolando", surname: "Barbella"}
+  console.log(team); //{person: Object, pet: "Dog"}
 ```
 ###String Templates
 You can declare strings with (backticks), in addition to " and '. This make the language a bit more mature, specially when we just do something like ```javascript 
@@ -119,7 +119,7 @@ string +  ' ' + anotherString ; ``` this feels like if we are doing basic math, 
 ```javascript
 let sayHi = "Hi!";
 let salutation = `${sayHi}, World`;
-console.log(salutation) ==>  Hi!, World
+console.log(salutation) // Hi!, World
 ```
 
 ```javascript
@@ -156,7 +156,7 @@ function tag(strings, ...values){
 }
 var message = tag`It's ${new Date().getHours()} I'm ${" "} `;
 
-console.log(message); ==> It's 19 I'm awake
+console.log(message); // It's 19 I'm awake
 ```
 ##Destructuring and parameter handling
 There is ways of declaring variables with arrays while passing arguments, lets see how.
@@ -168,18 +168,18 @@ let {firstName, lastName} = {
   "email": "clinton-ruiz@facilisislorem.org",
   "address": "NW11 London"
 }
-console.log(firstName,lastName); ==> Clinton Ruiz
+console.log(firstName,lastName); // Clinton Ruiz
 ```
 
 ```javascript
 var [first,,,,fifth] = ["one","two","tree","four","five"];
-console.log(first); ==> one
-console.log(fifth); ==> five
+console.log(first); // one
+console.log(fifth); // five
 ```
 You can also do:
 ```javascript
 var [first,second,,fifth] = ["one","two","tree","four","five"];
-console.log(second); ==> two
+console.log(second); // two
 ```
 More:
 ```javascript
@@ -206,8 +206,8 @@ function showEmail({email}){
   console.log(email);
 }
 
-showEmail(,Rolando); ==> rolando.alique@diamProin.uk
-showEmail(Clinton); ==> pharetra@facilisislorem.org
+showEmail(,Rolando); // rolando.alique@diamProin.uk
+showEmail(Clinton); // pharetra@facilisislorem.org
 ```
 ##Default Values for Function Parameters
 We can have default parameters inside a function and also overwrite them, lets see. 
@@ -216,8 +216,8 @@ We can have default parameters inside a function and also overwrite them, lets s
 function anotherHello(hi,name = "Rolando"){
   console.log(hi + " , " + name);
 }
-anotherHello("Hello"); ==> Hello Rolando
-anotherHello("Hello","Billy"); ==> Hello Billy
+anotherHello("Hello"); // Hello Rolando
+anotherHello("Hello","Billy"); // Hello Billy
 
 ```
 ##Arrow Function =>
@@ -246,7 +246,7 @@ var superMan = {
   }
 }
 
-superMan.receive(); ==> Clark Kent
+superMan.receive(); // Clark Kent
 ```
 ##Sources
 
