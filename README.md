@@ -87,7 +87,7 @@ car.fasts() ==> slow;
 You can get rid of an array in the most easy way you can ever imagine and off course do more complex things.
 
 ```javascript
-  console.log(...[1,2,3]); ==> 1,2,3
+  console.log(...[1,2,3]);// 1,2,3
 ```
 ```javascript
   console.log(...[1,2,3]);
@@ -95,7 +95,13 @@ You can get rid of an array in the most easy way you can ever imagine and off co
   var second = [4,5,6];
 
   first.push(...second);
-  console.log(first);
+  console.log(first) //1,2,3,4,5,6;
+```
+Another useful example
+```javascript
+  const numbers = [1,2,3]
+  [...numbers,4];// [1,2,3,4]
+  // Which is equal to numbers.concat([4])
 ```
 ##Shorthand Properties
 let is an alternatives to var when declaring variables,let is block-scoped instead of lexically scoped to a function,let is hoisted to the top of the block, while var declarations are hoisted to top of the function.
@@ -178,7 +184,7 @@ console.log(fifth); ==> five
 ```
 You can also do:
 ```javascript
-var [first,second,,fifth] = ["one","two","tree","four","five"];
+var [first,second,,,fifth] = ["one","two","tree","four","five"];
 console.log(second); ==> two
 ```
 More:
