@@ -102,6 +102,20 @@ Another useful example
   [...numbers,4];// [1,2,3,4]
   // Which is equal to numbers.concat([4]);
 ```
+Using variables
+```javascript
+var a, b, rest;
+[a, b, ...rest] = [1, 2, 3, 4, 5]
+console.log(a); // 1
+console.log(b); // 2
+console.log(rest); // [3, 4, 5]
+
+var x = [1, 2, 3, 4, 5];
+var [y, z] = x;
+console.log(y); // 1
+console.log(z); // 2
+```
+
 ##Shorthand Properties
 let is an alternatives to var when declaring variables,let is block-scoped instead of lexically scoped to a function,let is hoisted to the top of the block, while var declarations are hoisted to top of the function.
 
