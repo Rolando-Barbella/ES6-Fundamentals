@@ -200,6 +200,23 @@ You can also do:
 var [first,second,,,fifth] = ["one","two","tree","four","five"];
 console.log(second); ==> two
 ```
+Parsing an array returned from a function
+```javascript
+  function foo(){
+    return [1,2,3];
+  };
+  var a, c
+  [a,,c] = foo();
+
+  console.log(c) //3
+```
+Object destructuring
+```javascript
+var obj = {price: 42, vailable: true};
+var {price, vailable} = obj;
+
+console.log(price); //42
+```
 More:
 ```javascript
 var contacts = [
@@ -267,6 +284,19 @@ var superMan = {
 
 superMan.receive(); // Clark Kent
 ```
+## entries() method
+The entries() method returns a new Array Iterator object that contains the key/value pairs for each index in the array.
+
+*Note: No support on Explorer or Android devices
+
+```javascript
+const lettes = [a,b,c];
+var entries = letters.entries();
+
+for(let e of entries){console.log(e)} // [0,a],[1,b],[2,c];
+
+```
+
 ##Sources
 
 - [es6-feature](http://es6-features.org/#Constants)
