@@ -216,6 +216,21 @@ var obj = {price: 42, vailable: true};
 var {price, vailable} = obj;
 
 console.log(price); //42
+
+------------------------
+
+const {name,location} ={
+  name:'Rolando',
+  surname:'Barbella',
+  location:{city:'Cardiff',street:'Cwmdare street'},
+  job:'Developer'
+};
+
+const getLocationStreet = ({name,location}) =>{
+  return location.street;
+};
+
+getLoactionStreet()//Cwmdare street
 ```
 More:
 ```javascript
