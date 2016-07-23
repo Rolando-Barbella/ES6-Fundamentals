@@ -129,7 +129,7 @@ let is an alternatives to var when declaring variables,let is block-scoped inste
   let team = {person,pet}
 
   console.log(person); //{name: "Rolando", surname: "Barbella"}
-  console.log(team); //{person: Object, pet: "Dog"}
+  console.log(team); //{person: {person: {name:'Rolando',surname:'Barbella'}, pet: "Dog"}, pet: "Dog"}
 ```
 ###String Templates
 You can declare strings with (backticks), in addition to " and '. This make the language a bit more mature, specially when we just do something like ```javascript 
