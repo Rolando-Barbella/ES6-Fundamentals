@@ -311,6 +311,56 @@ var entries = letters.entries();
 for(let e of entries){console.log(e)} // [0,a],[1,b],[2,c];
 
 ```
+##Promises
+The Promise object is used for asynchronous computations. A Promise represents an operation that hasn't completed yet, but is expected in the future.
+
+> Note: You should use .catch() for handling errors, rather than .then(null, fn). Using .catch() is more explicit and idiomatic; and when chaining you can have a single .catch() at the end of the chain to handle any rejection or thrown exceptions from either the original promise or any of it's handlers
+
+```javascript
+
+const d = new Promise((resolve,reject)=>{
+  setTimeout(()=>{
+    if(true){
+      resolve('Hello!');
+    }else{
+      reject('no bueno');
+    }
+  },2000);
+});
+
+d.then((data)=> {
+  console.log('success :', data);
+  return 'foo bar'
+}).
+then((data)=>console.log('success2:', data)).
+catch((error)=> console.error('error:', error));
+// success : Hello!
+// success2: foo bar
+
+```
+### Promise.all()
+Promise.all() takes an array of Promises and once all of them are fulfilled it fulfills its returned Promise with an array of their fulfilled values.This method can be useful for aggregating results of multiple promises together
+
+```javascript
+  var itemUrls = {  
+    'http://www.api.com/items/1234',
+    'http://www.api.com/items/4567'
+  },
+  itemPromises = itemUrls.map(fetchJSON);
+
+Promise.all(itemPromises)  
+  .then(function(results) {
+     // we only get here if ALL promises fulfill
+     results.forEach(function(item) {
+       // process item
+     });
+  })
+  .catch(function(err) {
+    // Will catch failure of first failed promise
+    console.log("Failed:", err);
+  });
+
+```
 
 ##Sources
 
@@ -319,3 +369,4 @@ for(let e of entries){console.log(e)} // [0,a],[1,b],[2,c];
 - [ponyfoo.com](http://ponyfoo.com/articles/es6#template-literals)
 - [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/New_in_JavaScript/ECMAScript_6_support_in_Mozilla)
 - [egghead.io](https://egghead.io/technologies/es6)
+- [Dave Atchley](http://www.datchley.name/es6-promises/)
