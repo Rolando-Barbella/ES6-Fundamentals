@@ -271,6 +271,21 @@ anotherHello("Hello"); // Hello Rolando
 anotherHello("Hello","Billy"); // Hello Billy
 
 ```
+Another useful example
+
+```javascript
+const getParam = ()=>{
+  return 3;
+};
+
+const multiply = (a, b = getParam())=>{
+  return a * b;
+};
+
+multiply(2,5);//10
+multiply(2);//6
+
+```
 ##Arrow Function =>
 We can use => as part of the new syntax and do stuff like
 
