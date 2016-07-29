@@ -228,7 +228,7 @@ const {name,location} ={
 };
 
 const getLocationStreet = ({name,location}) =>{
-  console.log(name + ' ' + lives in ' +  ' ' + location.street);
+  console.log(name + '  '+ ' lives in ' +  ' ' + location.street);
 };
 
 getLoactionStreet()//Rolando lives in Cwmdare street
@@ -345,7 +345,6 @@ const superMan = {
 
 superMan.receive();// Clark Kent
 
-superMan.receive(); // Clark Kent
 ```
 ## entries() method
 The entries() method returns a new Array Iterator object that contains the key/value pairs for each index in the array.
