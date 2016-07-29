@@ -320,10 +320,11 @@ The entries() method returns a new Array Iterator object that contains the key/v
 *Note: No support on Explorer or Android devices
 
 ```javascript
-const lettes = [a,b,c];
-var entries = letters.entries();
+const lettes = ['a','b','c'];
 
-for(let e of entries){console.log(e)} // [0,a],[1,b],[2,c];
+for(const[index,element] of letters.entries()){
+  console.log(index,element);
+};
 
 ```
 ##Promises
