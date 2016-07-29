@@ -308,10 +308,11 @@ const multiply = (a, b = getParam())=>{
 
 multiply(2,5);//10
 multiply(2);//6
-
 ```
+
 Mandatory Arguments 
 
+```javascript
 function throwError(){
   throw new Error('Missing Parameter');
 };
@@ -321,6 +322,8 @@ function foo(param1 = throwError(),param2 = throwError()){
 };
 foo(10,20);//ok
 foo(10);//Error:Missing Parameter
+
+```
 
 ##Arrow Function ()=>
 We can use => as part of the new syntax and do stuff like
