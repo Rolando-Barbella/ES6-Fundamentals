@@ -16,7 +16,7 @@ const API = '//myapi.json'
 
 const VALUE = {};
 VALUE.foo = 'bar';
-console.log('value:',VALUE); // value: Object {foo: "bar"}
+console.log('value:',VALUE); // value: bar
 
 if(true){
   const consoleBar = 'Bar';
@@ -78,9 +78,9 @@ var car = {
   }
 };
 
-console.log('The color car is '+ car.color);
-console.log('He runs at ' + car.speed + ' ' + 'Miles an hour');
-car.go();
+console.log('The color car is '+ car.color);//The color car is red
+console.log('He runs at ' + car.speed + ' ' + 'Miles an hour');//He runs at 100 Miles an hour
+car.go();//vroom
 car.fasts() // slow;
 ```
 ##Spread operator
@@ -126,10 +126,11 @@ let is an alternatives to var when declaring variables,let is block-scoped inste
 
   let person = {name, surname};
 
-  let team = {person,pet}
+  let team = {person,pet};
 
   console.log(person); //{name: "Rolando", surname: "Barbella"}
-  console.log(team); //{person: {person: {name:'Rolando',surname:'Barbella'}, pet: "Dog"}, pet: "Dog"}
+  console.log(team.person); //{name: "Rolando", surname: "Barbella"}
+  console.log(team.pet);// Dog
 ```
 ###String Templates
 You can declare strings with (backticks), in addition to " and '. This make the language a bit more mature, specially when we just do something like ```javascript 
@@ -195,11 +196,7 @@ var [first,,,,fifth] = ["one","two","tree","four","five"];
 console.log(first); // one
 console.log(fifth); // five
 ```
-You can also do:
-```javascript
-var [first,second,,,fifth] = ["one","two","tree","four","five"];
-console.log(second); ==> two
-```
+
 Parsing an array returned from a function
 ```javascript
   function foo(){
@@ -211,13 +208,17 @@ Parsing an array returned from a function
   console.log(c) //3
 ```
 Object destructuring
+Example 1
 ```javascript
 var obj = {price: 42, vailable: true};
 var {price, vailable} = obj;
 
 console.log(price); //42
 
-------------------------
+```
+Example 2
+
+```javascript
 
 const {name,location} ={
   name:'Rolando',
@@ -227,12 +228,14 @@ const {name,location} ={
 };
 
 const getLocationStreet = ({name,location}) =>{
-  return location.street;
+  console.log(name + ' ' + lives in ' +  ' ' + location.street);
 };
 
-getLoactionStreet()//Cwmdare street
+getLoactionStreet()//Rolando lives in Cwmdare street
+
 ```
 More:
+
 ```javascript
 var contacts = [
   {
@@ -248,17 +251,38 @@ var contacts = [
     "phone": "1-429-754-5027",
     "email": "rolando.alique@diamProin.uk",
     "address": "Cf24 Cathays"
-  },
-  .......
+  }
+  
 ]
-var [,Rolando] = contacts;
+var [Clinton,Rolando] = contacts;
 
 function showEmail({email}){
   console.log(email);
 }
 
-showEmail(,Rolando); // rolando.alique@diamProin.uk
+showEmail(Rolando); // rolando.alique@diamProin.uk
 showEmail(Clinton); // pharetra@facilisislorem.org
+```
+Argument objects
+
+```javascript
+ const getParameter = ()=>{
+  console.log(parameter[1],parameter[0],parameter[2]);
+ };
+
+ getParameter(2,4,6); //4 2 6
+
+```
+Array from() in ES6 
+
+```javascript
+
+const sort(){
+  var a = Array.from(arguments);
+  return a.sort();
+};
+
+sort(40,20,50,30);//[20,30,40,50]
 ```
 ##Default Values for Function Parameters
 We can have default parameters inside a function and also overwrite them, lets see. 
@@ -271,7 +295,7 @@ anotherHello("Hello"); // Hello Rolando
 anotherHello("Hello","Billy"); // Hello Billy
 
 ```
-Another useful example
+Another useful example using functions
 
 ```javascript
 const getParam = ()=>{
@@ -286,31 +310,40 @@ multiply(2,5);//10
 multiply(2);//6
 
 ```
-##Arrow Function =>
+Mandatory Arguments 
+
+function throwError(){
+  throw new Error('Missing Parameter');
+};
+
+function foo(param1 = throwError(),param2 = throwError()){
+  //do something  
+};
+foo(10,20);//ok
+foo(10);//Error:Missing Parameter
+
+##Arrow Function ()=>
 We can use => as part of the new syntax and do stuff like
 
 ```javascript
-var arrowHello = (message,name) => `${message} ${name}`;
-console.log(arrowHello("hello","Mamma")); ==> Hello Mamma
+const arrowHello = (message,name) => `${message} ${name}`;
+console.log(arrowHello("hello","Mamma"));// Hello Mamma
 ```
-
-We can also go deeper into functions and do something like:
-```javascript
-var arrowHello = (message,name) => `${message} ${name}`;
-console.log(arrowHello("hello","Mamma")); ==> Hello Mamma
-```
+Using objects
 
 ```javascript
-var superMan = {
+const superMan = {
   name:"Clark",
-  showLastName:function(lastName,add){
+  showLastName:(lastName,add)=>{
     add(lastName);
   },
   receive:function(){
     this.showLastName(" Kent", lastName => 
     console.log(this.name + lastName));
   }
-}
+};
+
+superMan.receive();// Clark Kent
 
 superMan.receive(); // Clark Kent
 ```
