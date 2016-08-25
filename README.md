@@ -5,8 +5,8 @@ A series of short examples to get the basic understanding on ES6 and some of the
 - [Definition](#definition)
 - [Variables](#variables)
       - [Const](#const)
-- [Working with modules](#Working with modules)
-- [Object Enhancements](#Object Enhancements)
+- [Working with modules](#working-with-modules)
+- [Object Enhancements](#object-enhancements)
 
 ##Definition (from Wikipedia)
 
