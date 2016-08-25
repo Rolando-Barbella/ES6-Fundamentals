@@ -4,7 +4,9 @@ A series of short examples to get the basic understanding on ES6 and some of the
 
 - [Definition](#definition)
 - [Variables](#variables)
-        -[Const](#const)
+      - [Const](#const)
+- [Working with modules](#Working with modules)
+- [Object Enhancements](#Object Enhancements)
 
 ##Definition (from Wikipedia)
 
@@ -57,7 +59,7 @@ export var users = [
 From addition.js
 ```javascript
 import * as _ from 'lodash';
-import {sum,sumMore as addTwo} from './addition'; // Calling external file ==> addition.js
+import {sum,sumMore as addTwo} from './addition'; // Calling external file -> addition.js
 import * as addition from './addition'; 
 ```
 From  users.js
@@ -68,7 +70,7 @@ console.log( "2+3", sum(2,3));
 console.log( "2+3+5", addTwo(2,3,5));
 console.log("second way of doing it", addition.sum(2,3));
 ```
-###Object Enhancements
+##Object Enhancements
 This syntactic sugar allows us to quickly create objects by passing the reference and it will create the property based on that.
 
 ```javascript
