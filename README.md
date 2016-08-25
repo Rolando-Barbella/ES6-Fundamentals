@@ -2,16 +2,26 @@
 
 A series of short examples to get the basic understanding on ES6 and some of their new features.
 
-##What's new? (from Wikipedia)
+- [Definition](#definition)
+- [Variables](#variabbles)
+  -[Const](#const)
+
+##Definition (from Wikipedia)
 
 The Sixth Edition, known as ECMAScript 2015,[12] adds significant new syntax for writing complex applications, including classes and modules, but defines them semantically in the same terms as ECMAScript 5 strict mode. Other new features include iterators and for/of loops, Python-style generators and generator expressions, arrow functions, binary data, typed arrays, collections (maps, sets and weak maps), promises, number and math enhancements, reflection, and proxies (metaprogramming for virtual objects and wrappers). As the first “ECMAScript Harmony” specification, it is also known as “ES6 Harmony”.
 
-##The Const variable
+## Variables
+Es6 comes with two new variables, const and let, lets see what they are about
+
+#Const 
 Support for constants (also known as "immutable variables"), i.e., variables which cannot be re-assigned new content. Notice: this only makes the variable itself immutable, not its assigned content (for instance, in case the content is an object, this means the object itself can still be altered).
 
 The variable is recommend for example to use on cases when defining an API that we know no is not going to change, is recommend to declare it with capital letter.
 
 ```javascript
+const something = 'My car is purple';
+something = 'My car is red'// Uncaught TypeError: Assignment to constant variable.(…)
+
 const API = '//myapi.json'
 
 const VALUE = {};
