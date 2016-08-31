@@ -4,9 +4,11 @@ A series of short examples to get the basic understanding on ES6 and some of the
 
 - [Definition](#definition)
 - [Variables](#variables)
-      - [Const](#const)
-- [Working with modules](#working-with-modules)
-- [Object Enhancements](#object-enhancements)
+      - [const](#const)
+      - [let](#let)
+- [Working with modules](#Working with modules)
+- [Object Enhancements](#Object Enhancements)
+- [Spread operator](#Spread operator)
 
 ##Definition (from Wikipedia)
 
@@ -34,6 +36,24 @@ if(true){
   const consoleBar = 'Bar';
   console.log('foo',consoleBar); // foo bar
 }
+```
+## let
+let is an alternatives to var when declaring variables,let is block-scoped instead of lexically scoped to a function,let is hoisted to the  top of the block, while var declarations are hoisted to top of the function.
+
+```javascript
+  let name = 'Rolando';
+  let surname = 'Barbella';
+  let pet = "Dog";
+
+  //Shorthand Properties
+
+  let person = {name, surname};
+
+  let team = {person,pet};
+
+  console.log(person); //{name: "Rolando", surname: "Barbella"}
+  console.log(team.person); //{name: "Rolando", surname: "Barbella"}
+  console.log(team.pet);// Dog
 ```
 ##Working with modules
 With ES6 you can import and export modules from other files, this is quite handy and powerful, less repetition will be done thanks to this new feature, it gives a similar look and feel to languages like Python and Ruby.
@@ -95,7 +115,7 @@ car.go();//vroom
 car.fasts() // slow;
 ```
 ##Spread operator
-You can get rid of an array in the most easy way you can ever imagine and off course do more complex things.
+You can get rid of an array in the most easy way you can ever imagine and of course do more complex things.
 
 ```javascript
   console.log(...[1,2,3]);// 1,2,3
@@ -125,23 +145,6 @@ var x = [1, 2, 3, 4, 5];
 var [y, z] = x;
 console.log(y); // 1
 console.log(z); // 2
-```
-
-##Shorthand Properties
-let is an alternatives to var when declaring variables,let is block-scoped instead of lexically scoped to a function,let is hoisted to the top of the block, while var declarations are hoisted to top of the function.
-
-```javascript
-  let name = 'Rolando';
-  let surname = 'Barbella';
-  let pet = "Dog";
-
-  let person = {name, surname};
-
-  let team = {person,pet};
-
-  console.log(person); //{name: "Rolando", surname: "Barbella"}
-  console.log(team.person); //{name: "Rolando", surname: "Barbella"}
-  console.log(team.pet);// Dog
 ```
 ###String Templates
 You can declare strings with (backticks), in addition to " and '. This make the language a bit more mature, specially when we just do something like ```javascript 
