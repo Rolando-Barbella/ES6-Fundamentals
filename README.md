@@ -6,8 +6,8 @@ A series of short examples to get the basic understanding on ES6 and some of the
 - [Variables](#variables)
       - [const](#const)
       - [let](#let)
-- [Working with modules](#Working with modules)
-- [Object Enhancements](#Object Enhancements)
+- [Working with modules](#working-with-modules)
+- [Object Enhancements](#object-enhancements)
 - [Spread operator](#spread-operator)
 - [String Templates](#string-templates)
 
@@ -148,7 +148,9 @@ console.log(y); // 1
 console.log(z); // 2
 ```
 ##String Templates
-You can declare strings with (backticks), in addition to " and '. This make the language a bit more mature, specially when we just do something like ```javascript 
+You can declare strings with (backticks), in addition to " and '. This make the language a bit more mature, specially when we just do something like 
+
+```javascript 
 string +  ' ' + anotherString ; ``` this feels like if we are doing basic math, lets look at some examples on how we can do it now.
 
 ```javascript
