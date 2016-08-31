@@ -148,9 +148,7 @@ console.log(y); // 1
 console.log(z); // 2
 ```
 ##String Templates
-You can declare strings with (backticks), in addition to " and '. This make the language a bit more mature, specially when we just do something like 
-
-```javascript 
+You can declare strings with (backticks), in addition to " and '. This make the language a bit more mature, specially when we just do something like ```javascript 
 string +  ' ' + anotherString ; ``` this feels like if we are doing basic math, lets look at some examples on how we can do it now.
 
 ```javascript
