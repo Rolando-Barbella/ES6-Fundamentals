@@ -8,7 +8,8 @@ A series of short examples to get the basic understanding on ES6 and some of the
       - [let](#let)
 - [Working with modules](#Working with modules)
 - [Object Enhancements](#Object Enhancements)
-- [Spread operator](#Spread operator)
+- [Spread operator](#spread-operator)
+- [String Templates](#string-templates)
 
 ##Definition (from Wikipedia)
 
