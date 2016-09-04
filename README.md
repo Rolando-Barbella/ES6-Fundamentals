@@ -7,9 +7,12 @@ A series of short examples to get the basic understanding on ES6 and some of the
       - [const](#const)
       - [let](#let)
 - [Working with modules](#working-with-modules)
-- [Object Enhancements](#object-enhancements)
+- [Object enhancements](#object-enhancements)
 - [Spread operator](#spread-operator)
-- [String Templates](#string-templates)
+- [String templates](#string-templates)
+- [Destructuring and parameter handling](#destructuring-and-parameter-handling)
+- [Default values for function parameters](#default-values-for-function-parameters)
+- [Arrow function](#arrow-function)
 
 ##Definition (from Wikipedia)
 
@@ -91,7 +94,7 @@ console.log( "2+3", sum(2,3));
 console.log( "2+3+5", addTwo(2,3,5));
 console.log("second way of doing it", addition.sum(2,3));
 ```
-##Object Enhancements
+##Object enhancements
 This syntactic sugar allows us to quickly create objects by passing the reference and it will create the property based on that.
 
 ```javascript
@@ -147,7 +150,7 @@ var [y, z] = x;
 console.log(y); // 1
 console.log(z); // 2
 ```
-##String Templates
+##String templates
 You can declare strings with (backticks), in addition to " and '. This make the language a bit more mature, specially when we just do something like ```javascript 
 string +  ' ' + anotherString ; ``` this feels like if we are doing basic math, lets look at some examples on how we can do it now.
 
@@ -176,7 +179,7 @@ let x = 1;
 let y = 2;
 let maths = `${x} + ${y} = ${x+y}`
 
-console.log(maths) ==> 1 + 2 = 3;
+console.log(maths)//3;
 ```
 More complex scenario:
 ```javascript
@@ -299,7 +302,7 @@ const sort(){
 
 sort(40,20,50,30);//[20,30,40,50]
 ```
-##Default Values for Function Parameters
+##Default values for function parameters
 We can have default parameters inside a function and also overwrite them, lets see. 
 
 ```javascript
@@ -340,14 +343,28 @@ foo(10);//Error:Missing Parameter
 
 ```
 
-##Arrow Function ()=>
-We can use => as part of the new syntax and do stuff like
+##Arrow function ()=>
+We can use => as part of the new syntax, lets look at some of the benefits:
 
 ```javascript
 const arrowHello = (message,name) => `${message} ${name}`;
-console.log(arrowHello("hello","Mamma"));// Hello Mamma
+console.log(arrowHello("Hello","Mamma"));// Hello Mamma
 ```
-Using objects
+Clear syntax (no need to use return in this examples)
+```javascript
+ let greeting =(message,name)=>message + name;
+
+//In ES5
+var greeting = function(message,name){
+  return message + name;
+}
+
+//With one parameter
+
+var message = message => 'Hello';
+
+```
+A shortcut for creating anonymous functions with this scope bound.
 
 ```javascript
 const superMan = {
@@ -356,15 +373,14 @@ const superMan = {
     add(lastName);
   },
   receive:function(){
-    this.showLastName(" Kent", lastName => 
-    console.log(this.name + lastName));
+    this.showLastName(" Kent", lastName=> console.log(this.name + lastName));
   }
 };
 
 superMan.receive();// Clark Kent
 
 ```
-## entries() method
+## The entries() method
 The entries() method returns a new Array Iterator object that contains the key/value pairs for each index in the array.
 
 *Note: No support on Explorer or Android devices
