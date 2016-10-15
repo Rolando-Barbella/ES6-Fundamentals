@@ -249,7 +249,7 @@ const getLocationStreet = ({name,location}) =>{
   console.log(name + '  '+ ' lives in ' +  ' ' + location.street);
 };
 
-getLoactionStreet()//Rolando lives in Cwmdare street
+getLocationStreet()//Rolando lives in Cwmdare street
 
 ```
 More:
