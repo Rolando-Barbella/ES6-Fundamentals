@@ -245,11 +245,11 @@ const {name,location} ={
   job:'Developer'
 };
 
-const getLocationStreet = ({name,location}) =>{
-  console.log(name + '  '+ ' lives in ' +  ' ' + location.street);
+const getWhereYouLive = (name,location) =>{
+  return `${name} lives in ${location.street}`;
 };
 
-getLocationStreet()//Rolando lives in Cwmdare street
+console.log(getWhereYouLive(name,location));//Rolando lives in Cwmdare street
 
 ```
 More:
