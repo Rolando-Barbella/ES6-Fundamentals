@@ -184,17 +184,17 @@ console.log(maths)//3;
 More complex scenario:
 ```javascript
 function tag(strings, ...values){
-  if(values[0]<20){
-    values[1] = "awake";
-    return `${strings[0]}${values[0]}${strings[1]}${values[1]}`
+  if(values[0]>22){
+    values[1] = "sleepy";
   }
   else{
-    values[1] = "sleep";
+    values[1] = "awake";
   }
+  return `${strings[0]}${values[0]}${strings[1]}${values[1]}`
 }
-var message = tag`It's ${new Date().getHours()} I'm ${" "} `;
+const message = tag`It's ${new Date().getHours()} I'm ${""}`;
 
-console.log(message); // It's 19 I'm awake
+console.log(message); // It's 19 I'm awake // It's 23 I'm sleepy 
 ```
 ##Destructuring and parameter handling
 There is ways of declaring variables with arrays while passing arguments, lets see how.
@@ -350,7 +350,7 @@ We can use => as part of the new syntax, lets look at some of the benefits:
 const arrowHello = (message,name) => `${message} ${name}`;
 console.log(arrowHello("Hello","Mamma"));// Hello Mamma
 ```
-Clear syntax (no need to use return in this examples)
+Clear syntax, no need to use return when you don't use the curly brackets (implicit return); 
 ```javascript
  let greeting =(message,name)=>message + name;
 
@@ -380,6 +380,26 @@ const superMan = {
 superMan.receive();// Clark Kent
 
 ```
+Adding en element to an array
+
+```
+const names = ['Wes', 'Kait', 'Lux'];
+
+const fullNames = names.map((name) => {
+  return `${name} Bos`;
+});
+
+console.log(fullNames); // Wes Bos, Kait Bos, Lux Bos
+
+ ```
+ No parameters
+
+ ```javascript
+  const fullNames5 = names.map(() => `Cool Bos`);
+
+  console.log(fullNames5); // Cool Bos, Cool Bos, Cool Bos
+```
+
 ## The entries() method
 The entries() method returns a new Array Iterator object that contains the key/value pairs for each index in the array.
 
@@ -443,6 +463,9 @@ Promise.all(itemPromises)
   });
 
 ```
+##Generator
+
+Is a possible function function
 
 ##Sources
 
