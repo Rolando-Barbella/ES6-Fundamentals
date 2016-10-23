@@ -102,7 +102,7 @@ var color = "red";
 var speed = 100;
 var drive = "fasts";
 
-var car = {
+var const = {
   color,
   speed,
   go(){
@@ -125,8 +125,8 @@ You can get rid of an array in the most easy way you can ever imagine and of cou
   console.log(...[1,2,3]);// 1,2,3
 ```
 ```javascript
-  var first = [1,2,3];
-  var second = [4,5,6];
+ const first = [1,2,3];
+ const second = [4,5,6];
 
   first.push(...second);
   console.log(first) //1,2,3,4,5,6;
@@ -139,14 +139,14 @@ Another useful example
 ```
 Using variables
 ```javascript
-var a, b, rest;
+const a, b, rest;
 [a, b, ...rest] = [1, 2, 3, 4, 5]
 console.log(a); // 1
 console.log(b); // 2
 console.log(rest); // [3, 4, 5]
 
-var x = [1, 2, 3, 4, 5];
-var [y, z] = x;
+const x = [1, 2, 3, 4, 5];
+const [y, z] = x;
 console.log(y); // 1
 console.log(z); // 2
 ```
@@ -155,13 +155,13 @@ You can declare strings with (backticks), in addition to " and '. This make the 
 string +  ' ' + anotherString ; ``` this feels like if we are doing basic math, lets look at some examples on how we can do it now.
 
 ```javascript
-let sayHi = "Hi!";
-let salutation = `${sayHi}, World`;
+const sayHi = "Hi!";
+const salutation = `${sayHi}, World`;
 console.log(salutation) // Hi!, World
 ```
 
 ```javascript
-let salutationSpace = `
+const salutationSpace = `
 YOU
   ${sayHi}, 
 
@@ -175,9 +175,9 @@ World
 ```
 You can do cool maths like:
 ```javascript
-let x = 1;
-let y = 2;
-let maths = `${x} + ${y} = ${x+y}`
+const x = 1;
+const y = 2;
+const maths = `${x} + ${y} = ${x+y}`
 
 console.log(maths)//3;
 ```
@@ -199,7 +199,7 @@ console.log(message); // It's 19 I'm awake // It's 23 I'm sleepy
 ##Destructuring and parameter handling
 There is ways of declaring variables with arrays while passing arguments, lets see how.
 ```javascript
-let {firstName, lastName} = {
+const {firstName, lastName} = {
   "firstName": "Clinton",
   "lastName": "Ruiz",
   "phone": "1-403-985-0449",
@@ -210,7 +210,7 @@ console.log(firstName,lastName); // Clinton Ruiz
 ```
 
 ```javascript
-var [first,,,,fifth] = ["one","two","tree","four","five"];
+const [first,,,,fifth] = ["one","two","tree","four","five"];
 console.log(first); // one
 console.log(fifth); // five
 ```
@@ -220,7 +220,7 @@ Parsing an array returned from a function
   function foo(){
     return [1,2,3];
   };
-  var a, c
+  const a, c
   [a,,c] = foo();
 
   console.log(c) //3
@@ -228,8 +228,8 @@ Parsing an array returned from a function
 Object destructuring
 Example 1
 ```javascript
-var obj = {price: 42, vailable: true};
-var {price, vailable} = obj;
+const obj = {price: 42, vailable: true};
+const {price, vailable} = obj;
 
 console.log(price); //42
 
@@ -255,7 +255,7 @@ console.log(getWhereYouLive(name,location));//Rolando lives in Cwmdare street
 More:
 
 ```javascript
-var contacts = [
+const contacts = [
   {
     "firstName": "Clinton",
     "lastName": "Ruiz",
@@ -272,7 +272,7 @@ var contacts = [
   }
   
 ]
-var [Clinton,Rolando] = contacts;
+const [Clinton,Rolando] = contacts;
 
 function showEmail({email}){
   console.log(email);
@@ -352,7 +352,7 @@ console.log(arrowHello("Hello","Mamma"));// Hello Mamma
 ```
 Clear syntax, no need to use return when you don't use the curly brackets (implicit return); 
 ```javascript
- let greeting =(message,name)=>message + name;
+ const greeting =(message,name)=>message + name;
 
 //In ES5
 var greeting = function(message,name){
@@ -361,7 +361,7 @@ var greeting = function(message,name){
 
 //With one parameter
 
-var message = message => 'Hello';
+const message = message => 'Hello';
 
 ```
 A shortcut for creating anonymous functions with this scope bound.
@@ -382,7 +382,7 @@ superMan.receive();// Clark Kent
 ```
 Adding en element to an array
 
-```
+```javascript
 const names = ['Wes', 'Kait', 'Lux'];
 
 const fullNames = names.map((name) => {
@@ -463,9 +463,6 @@ Promise.all(itemPromises)
   });
 
 ```
-##Generator
-
-Is a possible function function
 
 ##Sources
 
@@ -475,3 +472,4 @@ Is a possible function function
 - [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/New_in_JavaScript/ECMAScript_6_support_in_Mozilla)
 - [egghead.io](https://egghead.io/technologies/es6)
 - [Dave Atchley](http://www.datchley.name/es6-promises/)
+- [Wes Bos](http://wesbos.com/arrow-functions/)
