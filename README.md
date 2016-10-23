@@ -380,7 +380,7 @@ const superMan = {
 superMan.receive();// Clark Kent
 
 ```
-Adding en element to an array
+Adding a string to each element in an array
 
 ```javascript
 const names = ['Wes', 'Kait', 'Lux'];
