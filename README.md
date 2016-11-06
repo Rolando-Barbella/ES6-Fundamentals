@@ -15,7 +15,7 @@ A series of short examples to get the basic understanding on ES6 and some of the
 - [Default values for function parameters](#default-values-for-function-parameters)
 - [Arrow function](#arrow-function)
 - [For loop](#foor-loop)
-- 
+
 
 ##Definition (from Wikipedia)
 
@@ -87,8 +87,6 @@ You write less with shorthand property names in ES6
   const name = 'Rolando';
   const surname = 'Barbella';
   const pet = "Dog";
-  
-  //Shorthand Properties
   
   const person = {name, surname};
   
