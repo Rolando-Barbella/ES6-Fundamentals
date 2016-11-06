@@ -14,7 +14,7 @@ A series of short examples to get the basic understanding on ES6 and some of the
 - [Destructuring and parameter handling](#destructuring-and-parameter-handling)
 - [Default values for function parameters](#default-values-for-function-parameters)
 - [Arrow function](#arrow-function)
-- [For loop](#foor-loop)
+- [For loop](#for-loop)
 
 
 ##Definition (from Wikipedia)
@@ -501,7 +501,7 @@ Promise.all(itemPromises)
   });
 
 ```
-## For loop
+##For loop
 
 ES6 for loop is the most concise, direct syntax yet for looping through array elements, it avoids all the pitfalls of for–in, unlike forEach(), it works with break, continue, and return.
 
