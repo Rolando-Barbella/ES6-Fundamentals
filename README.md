@@ -6,6 +6,7 @@ A series of short examples to get the basic understanding on ES6 and some of the
 - [Variables](#variables)
       - [const](#const)
       - [let](#let)
+- [Shorthand Properties](#shorthand-properties)
 - [Working with modules](#working-with-modules)
 - [Object enhancements](#object-enhancements)
 - [Spread operator](#spread-operator)
@@ -14,22 +15,35 @@ A series of short examples to get the basic understanding on ES6 and some of the
 - [Default values for function parameters](#default-values-for-function-parameters)
 - [Arrow function](#arrow-function)
 - [For loop](#foor-loop)
+- 
 
 ##Definition (from Wikipedia)
 
 The Sixth Edition, known as ECMAScript 2015,[12] adds significant new syntax for writing complex applications, including classes and modules, but defines them semantically in the same terms as ECMAScript 5 strict mode. Other new features include iterators and for/of loops, Python-style generators and generator expressions, arrow functions, binary data, typed arrays, collections (maps, sets and weak maps), promises, number and math enhancements, reflection, and proxies (metaprogramming for virtual objects and wrappers). As the first “ECMAScript Harmony” specification, it is also known as “ES6 Harmony”.
 
 ## Variables
-ES6 comes with two new variables, const and let, let's see what they are about
+ES6 comes with two new variables, const and let, which will make you think if you ever need to use var again.
 
 ###Const 
-Support for constants (also known as "immutable variables"), i.e., variables which cannot be re-assigned new content. Notice: this only makes the variable itself immutable, not its assigned content (for instance, in case the content is an object, this means the object itself can still be altered).
+Support for constants (also known as "immutable variables"), i.e., variables which cannot be re-assigned new content. 
+
+> Notice: This only makes the variable itself immutable, not its assigned content (for instance, in case the content is an object, this means the object itself can still be altered).
 
 The variable is recommend for example to use on cases when defining an API that we know no is not going to change, is recommend to declare it with capital letter.
 
 ```javascript
 const something = 'My car is purple';
 something = 'My car is red'// Uncaught TypeError: Assignment to constant variable.(…)
+
+// But
+
+const x = {
+  y: 13
+}
+
+x.y = 14
+
+console.log(x.y) // 14
 
 const API = '//myapi.json'
 
@@ -43,23 +57,48 @@ if(true){
 }
 ```
 ## let
-let is an alternatives to var when declaring variables,let is block-scoped instead of lexically scoped to a function,let is hoisted to the  top of the block, while var declarations are hoisted to top of the function.
+let is a better alternatives to var when declaring variables, let is block-scoped instead of lexically scoped to a function, let is hoisted to the  top of the block, while var declarations are hoisted to top of the function.
 
 ```javascript
-  let name = 'Rolando';
-  let surname = 'Barbella';
-  let pet = "Dog";
 
+  // Whit ES5
+  const i = 666
+  for(var i = 0; i < 5; i++){
+    console.log(i)
+  } 
+  console.log('After i', i)
+  // 1 2 3 4 5
+  // After i 5
+
+  // Whit ES6 
+  const i = 666
+  for(let i = 0; i < 5; i++){
+    console.log(i)
+  } 
+  console.log('After i', i)
+  // 1 2 3 4 5
+  // After i 666
+
+``` 
+##Shorthand Properties
+You write less with shorthand property names in ES6
+
+```javascript
+  const name = 'Rolando';
+  const surname = 'Barbella';
+  const pet = "Dog";
+  
   //Shorthand Properties
-
-  let person = {name, surname};
-
-  let team = {person,pet};
-
+  
+  const person = {name, surname};
+  
+  const team = {person,pet};
+  
   console.log(person); //{name: "Rolando", surname: "Barbella"}
   console.log(team.person); //{name: "Rolando", surname: "Barbella"}
-  console.log(team.pet);// Dog
+  console.log(team.pet);// Dog 
 ```
+
 ##Working with modules
 With ES6 you can import and export modules from other files, this is quite handy and powerful, less repetition will be done thanks to this new feature, it gives a similar look and feel to languages like Python and Ruby.
 
@@ -404,7 +443,7 @@ console.log(fullNames); // Wes Bos, Kait Bos, Lux Bos
 ## The entries() method
 The entries() method returns a new Array Iterator object that contains the key/value pairs for each index in the array.
 
-*Note: No support on Explorer or Android devices
+> Note: No support on Explorer or Android devices
 
 ```javascript
 const lettes = ['a','b','c'];
@@ -464,9 +503,9 @@ Promise.all(itemPromises)
   });
 
 ```
-## For loops
+## For loop
 
-Es6 for loop is the most concise, direct syntax yet for looping through array elements, it avoids all the pitfalls of for–in, unlike forEach(), it works with break, continue, and return.
+ES6 for loop is the most concise, direct syntax yet for looping through array elements, it avoids all the pitfalls of for–in, unlike forEach(), it works with break, continue, and return.
 
 ```javascript
   const iterable = [0,1,2];
