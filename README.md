@@ -13,7 +13,7 @@ A series of short examples to get the basic understanding on ES6 and some of the
 - [String templates](#string-templates)
 - [Destructuring and parameter handling](#destructuring-and-parameter-handling)
 - [Default values for function parameters](#default-values-for-function-parameters)
-- [Arrow function](#arrow-function)
+- [Arrow function](#arrow-function-)
 - [For loop](#for-loop)
 
 
