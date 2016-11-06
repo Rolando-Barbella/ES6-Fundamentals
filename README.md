@@ -12,7 +12,8 @@ A series of short examples to get the basic understanding on ES6 and some of the
 - [String templates](#string-templates)
 - [Destructuring and parameter handling](#destructuring-and-parameter-handling)
 - [Default values for function parameters](#default-values-for-function-parameters)
-- [Arrow function](#arrow-function-)
+- [Arrow function](#arrow-function)
+- [For loop](#foor-loop)
 
 ##Definition (from Wikipedia)
 
@@ -462,6 +463,36 @@ Promise.all(itemPromises)
     console.log("Failed:", err);
   });
 
+```
+## For loops
+
+Es6 for loop is the most concise, direct syntax yet for looping through array elements, it avoids all the pitfalls of for–in, unlike forEach(), it works with break, continue, and return.
+
+```javascript
+  const iterable = [0,1,2];
+
+  for (let i of iterable) {
+      console.log(i);
+  }
+  // 0 1 2
+```
+It also works on strings, treating the string as a sequence of Unicode characters:
+
+```javascript
+  for (let chr of "ab") {
+    console.log(chr);
+  }
+  // a b
+```
+for–of does not work with plain old Objects, but if you want to iterate over an object’s properties you can either use for–in or the builtin Object.keys:
+
+``` javascript
+const someObject = {name:'Mike'}
+
+for (let key of Object.keys(someObject)) {
+  console.log(key + ": " + someObject[key]);
+}
+ // name: Mike
 ```
 
 ##Sources
