@@ -542,3 +542,4 @@ for (let key of Object.keys(someObject)) {
 - [egghead.io](https://egghead.io/technologies/es6)
 - [Dave Atchley](http://www.datchley.name/es6-promises/)
 - [Wes Bos](http://wesbos.com/arrow-functions/)
+- [Jason Orendorff](https://hacks.mozilla.org/2015/04/es6-in-depth-iterators-and-the-for-of-loop/)
