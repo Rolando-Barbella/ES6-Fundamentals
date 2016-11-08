@@ -169,13 +169,13 @@ You can get rid of an array in the most easy way you can ever imagine and of cou
   first.push(...second);
   console.log(first) //1,2,3,4,5,6;
 ```
-Another useful example
+The new concat()
 ```javascript
   const numbers = [1,2,3]
   [...numbers,4];// [1,2,3,4]
   // Which is equal to numbers.concat([4]);
 ```
-Using variables
+Also
 ```javascript
 const a, b, rest;
 [a, b, ...rest] = [1, 2, 3, 4, 5]
@@ -187,6 +187,13 @@ const x = [1, 2, 3, 4, 5];
 const [y, z] = x;
 console.log(y); // 1
 console.log(z); // 2
+```
+With parameters
+```javascript
+function foo(...args) {
+  return arguments;
+}
+foo(1, 2, 3); // { "0": 1, "1": 2, "2": 3 }
 ```
 ##String templates
 You can declare strings with (backticks), in addition to " and '. This make the language a bit more mature, specially when we just do something like ```javascript 
@@ -319,26 +326,15 @@ function showEmail({email}){
 showEmail(Rolando); // rolando.alique@diamProin.uk
 showEmail(Clinton); // pharetra@facilisislorem.org
 ```
-Argument objects
+Array from() 
 
 ```javascript
- const getParameter = ()=>{
-  console.log(parameter[1],parameter[0],parameter[2]);
- };
+function foo() {
+  return Array.from(arguments);
+}
 
- getParameter(2,4,6); //4 2 6
-
-```
-Array from() in ES6 
-
-```javascript
-
-const sort(){
-  var a = Array.from(arguments);
-  return a.sort();
-};
-
-sort(40,20,50,30);//[20,30,40,50]
+foo(10, 20, 30);
+// [10, 20, 30]
 ```
 ##Default values for function parameters
 We can have default parameters inside a function and also overwrite them, lets see. 
@@ -381,23 +377,23 @@ foo(10);//Error:Missing Parameter
 
 ```
 
-##Arrow function ()=>
+##Arrow function () =>
 We can use => as part of the new syntax, lets look at some of the benefits:
-
-```javascript
-const arrowHello = (message,name) => `${message} ${name}`;
-console.log(arrowHello("Hello","Mamma"));// Hello Mamma
-```
 Clear syntax, no need to use return when you don't use the curly brackets (implicit return); 
 ```javascript
- const greeting =(message,name)=>message + name;
 
+const arrowHello = (message,name) => `${message} ${name}`;
+console.log(arrowHello("Hello","Mamma"));// Hello Mamma
 //In ES5
 var greeting = function(message,name){
   return message + name;
 }
 
-//With one parameter
+```
+With one parameter you could do:
+> Note: When you are working within a team, make sure every one else understand this type of syntax, not only you.
+
+```javascript
 
 const message = message => 'Hello';
 
