@@ -188,7 +188,8 @@ const [y, z] = x;
 console.log(y); // 1
 console.log(z); // 2
 ```
-With parameters
+With arguments
+
 ```javascript
 function foo(...args) {
   return arguments;
@@ -340,7 +341,7 @@ foo(10, 20, 30);
 We can have default parameters inside a function and also overwrite them, lets see. 
 
 ```javascript
-function anotherHello(hi,name = "Rolando"){
+function anotherHello(hi, name = "Rolando"){
   console.log(hi + " , " + name);
 }
 anotherHello("Hello"); // Hello Rolando
@@ -437,14 +438,18 @@ console.log(fullNames); // Wes Bos, Kait Bos, Lux Bos
 ## The entries() method
 The entries() method returns a new Array Iterator object that contains the key/value pairs for each index in the array.
 
-> Note: No support on Explorer or Android devices
+> Note: No support on Explorer or Android devices.
 
 ```javascript
-const lettes = ['a','b','c'];
+const letters = ['a','b','c'];
 
 for(const[index,element] of letters.entries()){
   console.log(index,element);
 };
+
+// 0 'a'
+// 1 'b'
+// 2 'c'
 
 ```
 ##Promises
