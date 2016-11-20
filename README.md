@@ -14,6 +14,7 @@ A series of short examples to get the basic understanding on ES6 and some of the
 - [Destructuring and parameter handling](#destructuring-and-parameter-handling)
 - [Default values for function parameters](#default-values-for-function-parameters)
 - [Arrow function](#arrow-function-)
+- [Transpiling](#transpiling)
 - [For loop](#for-loop)
 
 
@@ -191,10 +192,10 @@ console.log(z); // 2
 With arguments
 
 ```javascript
-function foo(...args) {
-  return arguments;
+function foo(a,b, ...c){
+  return c.filter( n => n>3)
 }
-foo(1, 2, 3); // { "0": 1, "1": 2, "2": 3 }
+foo(1,2,3,4,5); // [4,5]
 ```
 ##String templates
 You can declare strings with (backticks), in addition to " and '. This make the language a bit more mature, specially when we just do something like ```javascript 
@@ -501,6 +502,19 @@ Promise.all(itemPromises)
     console.log("Failed:", err);
   });
 
+```
+##Transpiling
+
+Transpiler perform transformation for you, usually in build workflow step similar to how you perform linting, minifications and other similar operations
+
+```javascript
+  const foo = [1,2,3];
+
+  const obj = {
+    foo
+  };
+
+  console.log(obj.foo) //[1,2,3]
 ```
 ##For loop
 
