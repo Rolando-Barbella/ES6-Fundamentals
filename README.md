@@ -339,7 +339,20 @@ foo(10, 20, 30);
 // [10, 20, 30]
 ```
 ##Default values for function parameters
-We can have default parameters inside a function and also overwrite them, lets see. 
+We can have default parameters inside a function and also overwrite them, with out worrying about passing 0 (which means falsy in ES5). 
+
+```javascript
+function params(x = 5, y = 13 ){
+ console.log(x + y);
+}
+params(0,50)// 50
+params(undefined,10) // 15 - undefined means this parameter is missing
+params(null,10)// 10
+params(7)// 20
+params(10,undefined) // 23
+
+```
+With strings
 
 ```javascript
 function anotherHello(hi, name = "Rolando"){
