@@ -16,7 +16,7 @@ A series of short examples to get the basic understanding on ES6 and some of the
 - [Arrow function](#arrow-function--)
 - [The entries() method](#the-entries-method)
 - [Promises](#promises)
-      - [Promise.all()](##promiseall)
+      - [Promise.all()](#promiseall)
 - [Transpiling](#transpiling)
 - [For loop](#for-loop)
 - [Proxies](#proxies)
