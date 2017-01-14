@@ -13,9 +13,12 @@ A series of short examples to get the basic understanding on ES6 and some of the
 - [String templates](#string-templates)
 - [Destructuring and parameter handling](#destructuring-and-parameter-handling)
 - [Default values for function parameters](#default-values-for-function-parameters)
-- [Arrow function](#arrow-function-)
+- [Arrow function](#arrow-function)
 - [Transpiling](#transpiling)
 - [For loop](#for-loop)
+- [Proxies](#proxies)
+- [Reflects](#reflects)
+      -[Reflect.ownKeys()](#reflect.ownKeys())
 
 
 ##Definition (from Wikipedia)
@@ -559,6 +562,54 @@ for (let key of Object.keys(someObject)) {
 }
  // name: Mike
 ```
+##Proxies
+The Proxy object is used to define custom behavior for fundamental operations (e.g. property lookup, assignment, enumeration, function invocation, etc).
+
+```javascript
+const characters = [
+  'Harry Potter',
+  'Ron Weasly',
+  'Hermione Granger',
+  'Nevel Longbottom',
+  'Lavender Brown',
+  'Scabbers',
+  'Pigwidgeon',
+]
+
+const handler = {
+  get(target, name) {
+    if(name in target){
+      return Reflect.get(target, name)
+    } else {
+      const index = Number(name)
+      return Reflect.get(target, target.length + index)
+    }
+  }
+};
+
+const proxy = new Proxy(characters, handler);
+
+console.log(proxy[0]); //Harry Potter
+console.log(proxy[-1]); //Pigwidgeon
+console.log(proxy[-4]); //Nevel Longbottom
+```
+
+## Reflects
+
+Reflect is a built-in object that provides methods for interceptable JavaScript operations. The methods are the same as those of proxy handlers. Reflect is not a function object, so it's not constructible.
+
+### Reflect.ownKeys()
+
+Returns an array of the target object's own (not inherited) property keys
+
+```javascript
+  const person = { name: 'Rolando', surname:'Barbella' };
+  const keys = Reflect.ownKeys(num) 
+
+  console.log(keys)// ['Rolando', 'Barbella'];
+
+```
+
 
 ##Sources
 
