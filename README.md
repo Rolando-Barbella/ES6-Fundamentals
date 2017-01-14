@@ -13,12 +13,15 @@ A series of short examples to get the basic understanding on ES6 and some of the
 - [String templates](#string-templates)
 - [Destructuring and parameter handling](#destructuring-and-parameter-handling)
 - [Default values for function parameters](#default-values-for-function-parameters)
-- [Arrow function](#arrow-function)
+- [Arrow function](#arrow-function--)
+- [The entries() method](#the-entries-method)
+- [Promises](#promises)
+      - [Promise.all()](##promiseall)
 - [Transpiling](#transpiling)
 - [For loop](#for-loop)
 - [Proxies](#proxies)
 - [Reflects](#reflects)
-      -[Reflect.ownKeys()](#reflect.ownKeys())
+      -[Reflect.ownKeys()](#reflectownkeys)
 
 
 ##Definition (from Wikipedia)
@@ -604,7 +607,7 @@ Returns an array of the target object's own (not inherited) property keys
 
 ```javascript
   const person = { name: 'Rolando', surname:'Barbella' };
-  const keys = Reflect.ownKeys(num) 
+  const keys = Reflect.ownKeys(person) 
 
   console.log(keys)// ['Rolando', 'Barbella'];
 
