@@ -21,7 +21,7 @@ A series of short examples to get the basic understanding on ES6 and some of the
 - [For loop](#for-loop)
 - [Proxies](#proxies)
 - [Reflects](#reflects)
-      -[Reflect.ownKeys()](#reflectownkeys)
+    -[Reflect.ownKeys()](#reflectownkeys)
 
 
 ##Definition (from Wikipedia)
@@ -143,11 +143,11 @@ console.log("second way of doing it", addition.sum(2,3));
 This syntactic sugar allows us to quickly create objects by passing the reference and it will create the property based on that.
 
 ```javascript
-var color = "red";
-var speed = 100;
-var drive = "fasts";
+const color = "red";
+const speed = 100;
+const drive = "fasts";
 
-var const = {
+const car = {
   color,
   speed,
   go(){
