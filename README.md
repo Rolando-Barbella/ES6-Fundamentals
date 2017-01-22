@@ -220,11 +220,13 @@ YOU
 
 World`
 
-;
-console.log(salutationSpace) ==> YOU
-  Hi!, 
+console.log(salutationSpace) 
 
-World
+// YOU
+    Hi!, 
+
+  World
+
 ```
 You can do cool maths like:
 ```javascript
@@ -247,7 +249,16 @@ function tag(strings, ...values){
 }
 const message = tag`It's ${new Date().getHours()} I'm ${""}`;
 
-console.log(message); // It's 19 I'm awake // It's 23 I'm sleepy 
+console.log(message); // It's 19 I'm awake // It's 23 I'm sleepy
+```
+With functions
+```javascript
+function upper(word) {
+  return word.toUpperCase()
+}
+const text = `A very ${upper("cool")} one`
+
+console.log(text)// "A very COOL one"
 ```
 ##Destructuring and parameter handling
 There is ways of declaring variables with arrays while passing arguments, lets see how.
@@ -281,7 +292,7 @@ Parsing an array returned from a function
 Object destructuring
 Example 1
 ```javascript
-const obj = {price: 42, vailable: true};
+const obj = {price: 42, available: true};
 const {price, vailable} = obj;
 
 console.log(price); //42
@@ -371,9 +382,9 @@ anotherHello("Hello","Billy"); // Hello Billy
 Another useful example using functions
 
 ```javascript
-const getParam = ()=>{
-  return 3;
-};
+
+const getParam = () => 3;
+
 
 const multiply = (a, b = getParam())=>{
   return a * b;
@@ -390,7 +401,7 @@ function throwError(){
   throw new Error('Missing Parameter');
 };
 
-function foo(param1 = throwError(),param2 = throwError()){
+function foo(param1 = throwError(), param2 = throwError()){
   //do something  
 };
 foo(10,20);//ok
