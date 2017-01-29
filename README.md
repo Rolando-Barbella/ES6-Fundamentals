@@ -1,11 +1,11 @@
-#Javascript ES6 
+# Javascript ES6 
 
 A series of short examples to get the basic understanding on ES6 and some of their new features.
 
 - [Definition](#definition)
 - [Variables](#variables)
-      - [const](#const)
-      - [let](#let)
+    - [const](#const)
+    - [let](#let)
 - [Shorthand Properties](#shorthand-properties)
 - [Working with modules](#working-with-modules)
 - [Object enhancements](#object-enhancements)
@@ -16,22 +16,21 @@ A series of short examples to get the basic understanding on ES6 and some of the
 - [Arrow function](#arrow-function--)
 - [The entries() method](#the-entries-method)
 - [Promises](#promises)
-      - [Promise.all()](#promiseall)
+    - [Promise.all](#promiseall)
 - [Transpiling](#transpiling)
 - [For loop](#for-loop)
 - [Proxies](#proxies)
 - [Reflects](#reflects)
-      -[Reflect.ownKeys()](#reflectownkeys)
+    - [Reflect.ownKeys()](#reflectownkeys)
 
-
-##Definition (from Wikipedia)
+## Definition (from Wikipedia)
 
 The Sixth Edition, known as ECMAScript 2015,[12] adds significant new syntax for writing complex applications, including classes and modules, but defines them semantically in the same terms as ECMAScript 5 strict mode. Other new features include iterators and for/of loops, Python-style generators and generator expressions, arrow functions, binary data, typed arrays, collections (maps, sets and weak maps), promises, number and math enhancements, reflection, and proxies (metaprogramming for virtual objects and wrappers). As the first “ECMAScript Harmony” specification, it is also known as “ES6 Harmony”.
 
 ## Variables
 ES6 comes with two new variables, const and let, which will make you think if you ever need to use var again.
 
-###Const 
+### Const 
 Support for constants (also known as "immutable variables"), i.e., variables which cannot be re-assigned new content. 
 
 > Notice: This only makes the variable itself immutable, not its assigned content (for instance, in case the content is an object, this means the object itself can still be altered).
@@ -87,7 +86,7 @@ let is a better alternatives to var when declaring variables, let is block-scope
   // After i 666
 
 ``` 
-##Shorthand Properties
+## Shorthand Properties
 You write less with shorthand property names in ES6
 
 ```javascript
@@ -104,7 +103,7 @@ You write less with shorthand property names in ES6
   console.log(team.pet);// Dog 
 ```
 
-##Working with modules
+## Working with modules
 With ES6 you can import and export modules from other files, this is quite handy and powerful, less repetition will be done thanks to this new feature, it gives a similar look and feel to languages like Python and Ruby.
 
 addition.js
@@ -139,7 +138,7 @@ console.log( "2+3", sum(2,3));
 console.log( "2+3+5", addTwo(2,3,5));
 console.log("second way of doing it", addition.sum(2,3));
 ```
-##Object enhancements
+## Object enhancements
 This syntactic sugar allows us to quickly create objects by passing the reference and it will create the property based on that.
 
 ```javascript
@@ -163,7 +162,7 @@ console.log('He runs at ' + car.speed + ' ' + 'Miles an hour');//He runs at 100 
 car.go();//vroom
 car.fasts() // slow;
 ```
-##Spread operator
+## Spread operator
 You can get rid of an array in the most easy way you can ever imagine and of course do more complex things.
 
 ```javascript
@@ -204,7 +203,7 @@ function foo(a,b, ...c){
 foo(1,2,3,4,5); // [4,5]
 ```
 
-##String templates
+## String templates
 You can declare strings with (backticks), in addition to " and '. This make the language a bit more mature, specially when we just do something like ```javascript 
 string +  ' ' + anotherString ; ``` this feels like if we are doing basic math, lets look at some examples on how we can do it now.
 
@@ -263,8 +262,8 @@ console.log(text)// "A very COOL one"
 ```
 ##Destructuring and parameter handling
 There is ways of declaring variables with arrays and objects while passing arguments, lets see how.
-```
-###With Arrays
+
+### With Arrays
 
 ```javascript
 const [first,,,,fifth] = ["one","two","tree","four","five"];
@@ -357,7 +356,7 @@ showEmail(Rolando); // rolando.alique@diamProin.uk
 showEmail(Clinton); // pharetra@facilisislorem.org
 ```
 
-##Default values for function parameters
+## Default values for function parameters
 We can have default parameters inside a function and also overwrite them, with out worrying about passing 0 (which means falsy in ES5). 
 
 ```javascript
@@ -411,7 +410,7 @@ foo(10);//Error:Missing Parameter
 
 ```
 
-##Arrow function () =>
+## Arrow function () =>
 We can use => as part of the new syntax, lets look at some of the benefits:
 Clear syntax, no need to use return when you don't use the curly brackets (implicit return); 
 ```javascript
@@ -524,7 +523,7 @@ for(const[index,element] of letters.entries()){
 // 2 'c'
 
 ```
-##Promises
+## Promises
 The Promise object is used for asynchronous computations. A Promise represents an operation that hasn't completed yet, but is expected in the future.
 
 > Note: You should use .catch() for handling errors, rather than .then(null, fn). Using .catch() is more explicit and idiomatic; and when chaining you can have a single .catch() at the end of the chain to handle any rejection or thrown exceptions from either the original promise or any of it's handlers
@@ -574,7 +573,7 @@ Promise.all(itemPromises)
   });
 
 ```
-##Transpiling
+## Transpiling
 
 Transpiler perform transformation for you, usually in build workflow step similar to how you perform linting, minifications and other similar operations
 
@@ -587,7 +586,7 @@ Transpiler perform transformation for you, usually in build workflow step simila
 
   console.log(obj.foo) //[1,2,3]
 ```
-##For loop
+## For loop
 
 ES6 for loop is the most concise, direct syntax yet for looping through array elements, it avoids all the pitfalls of for–in, unlike forEach(), it works with break, continue, and return.
 
@@ -617,7 +616,7 @@ for (let key of Object.keys(someObject)) {
 }
  // name: Mike
 ```
-##Proxies
+## Proxies
 The Proxy object is used to define custom behavior for fundamental operations (e.g. property lookup, assignment, enumeration, function invocation, etc).
 
 ```javascript
@@ -666,7 +665,7 @@ Returns an array of the target object's own (not inherited) property keys
 ```
 
 
-##Sources
+## Sources
 
 - [es6-feature](http://es6-features.org/#Constants)
 - [wikipedia](http://en.wikipedia.org/wiki/ECMAScript)
