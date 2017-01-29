@@ -21,7 +21,7 @@ A series of short examples to get the basic understanding on ES6 and some of the
 - [For loop](#for-loop)
 - [Proxies](#proxies)
 - [Reflects](#reflects)
-    -[Reflect.ownKeys()](#reflectownkeys)
+      -[Reflect.ownKeys()](#reflectownkeys)
 
 
 ##Definition (from Wikipedia)
@@ -203,6 +203,7 @@ function foo(a,b, ...c){
 }
 foo(1,2,3,4,5); // [4,5]
 ```
+
 ##String templates
 You can declare strings with (backticks), in addition to " and '. This make the language a bit more mature, specially when we just do something like ```javascript 
 string +  ' ' + anotherString ; ``` this feels like if we are doing basic math, lets look at some examples on how we can do it now.
@@ -261,24 +262,15 @@ const text = `A very ${upper("cool")} one`
 console.log(text)// "A very COOL one"
 ```
 ##Destructuring and parameter handling
-There is ways of declaring variables with arrays while passing arguments, lets see how.
-```javascript
-const {firstName, lastName} = {
-  "firstName": "Clinton",
-  "lastName": "Ruiz",
-  "phone": "1-403-985-0449",
-  "email": "clinton-ruiz@facilisislorem.org",
-  "address": "NW11 London"
-}
-console.log(firstName,lastName); // Clinton Ruiz
+There is ways of declaring variables with arrays and objects while passing arguments, lets see how.
 ```
+###With Arrays
 
 ```javascript
 const [first,,,,fifth] = ["one","two","tree","four","five"];
 console.log(first); // one
 console.log(fifth); // five
 ```
-
 Parsing an array returned from a function
 ```javascript
   function foo(){
@@ -289,8 +281,18 @@ Parsing an array returned from a function
 
   console.log(c) //3
 ```
-Object destructuring
-Example 1
+Let's print the first or last values from an array
+
+```javascript
+const xs = [1, 2, 3];
+const [last, ...initial] = [...xs].reverse();
+
+last //[2,3]
+initial// [1]
+```
+### Object destructuring
+They work the same as we did with arrays
+
 ```javascript
 const obj = {price: 42, available: true};
 const {price, vailable} = obj;
@@ -298,7 +300,6 @@ const {price, vailable} = obj;
 console.log(price); //42
 
 ```
-Example 2
 
 ```javascript
 
@@ -316,7 +317,17 @@ const getWhereYouLive = (name,location) =>{
 console.log(getWhereYouLive(name,location));//Rolando lives in Cwmdare street
 
 ```
-More:
+```javascript
+const {firstName, lastName} = {
+  "firstName": "Clinton",
+  "lastName": "Ruiz",
+  "phone": "1-403-985-0449",
+  "email": "clinton-ruiz@facilisislorem.org",
+  "address": "NW11 London"
+}
+console.log(firstName,lastName); // Clinton Ruiz
+```
+
 
 ```javascript
 const contacts = [
@@ -345,16 +356,7 @@ function showEmail({email}){
 showEmail(Rolando); // rolando.alique@diamProin.uk
 showEmail(Clinton); // pharetra@facilisislorem.org
 ```
-Array from() 
 
-```javascript
-function foo() {
-  return Array.from(arguments);
-}
-
-foo(10, 20, 30);
-// [10, 20, 30]
-```
 ##Default values for function parameters
 We can have default parameters inside a function and also overwrite them, with out worrying about passing 0 (which means falsy in ES5). 
 
@@ -465,6 +467,45 @@ console.log(fullNames); // Wes Bos, Kait Bos, Lux Bos
 
   console.log(fullNames5); // Cool Bos, Cool Bos, Cool Bos
 ```
+
+Like with currying, we can use arrow functions to make partial application easy and explicit.
+
+```javascript
+const greet = function(g, name) {
+  return g + ' ' + name;
+}
+const sayHello = name => greet('hello', name);
+sayHello('fred')// "hello fred"
+```
+It’s also possible to use rest parameters with the spread operator to partially apply variadic functions.
+
+```javascript
+const sayHelloTo = (name, ...args) => greet('hello', name, ...args);
+sayHelloTo('fred', 1, 2, 3); // "hello fred"
+```
+ We can use arrow functions to create more reusable paths,
+
+```javascript
+const object = { 'a': [{ 'b': { 'c': 3 } }, 4] };
+[
+  obj => obj.a[0].b.c,
+  obj => obj.a[1]
+].map(path => path(object)); // [3, 4]
+
+[
+  arr => arr[0],
+  arr => arr[2]
+].map(path => path(['a', 'b', 'c'])); // [a, c]
+
+```
+
+
+```javascript
+const constant = x => () => x;
+constant({ 'a': 1 })() // Object {a: 1}
+
+```
+
 
 ## The entries() method
 The entries() method returns a new Array Iterator object that contains the key/value pairs for each index in the array.
