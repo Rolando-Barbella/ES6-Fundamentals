@@ -260,7 +260,7 @@ const text = `A very ${upper("cool")} one`
 
 console.log(text)// "A very COOL one"
 ```
-##Destructuring and parameter handling
+## Destructuring and parameter handling
 There is ways of declaring variables with arrays and objects while passing arguments, lets see how.
 
 ### With Arrays
